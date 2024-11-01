@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(fundo-linhas.png);
+    background-color: white;
     font-family: roboto;
 }
 
