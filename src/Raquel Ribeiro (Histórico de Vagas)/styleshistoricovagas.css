@@ -6,7 +6,6 @@ body {
     background-color: white;
     font-family: roboto;
 }
-
 header h1 {
     margin-top: 20px;
     font-size: 24px;
@@ -118,7 +117,6 @@ button {
     text-align: center;
     color: red;
 }
-
 .navbar {
     padding: 16px 112px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -129,4 +127,5 @@ button {
     width: 98px;
     height: 72px;
   }
+
 
