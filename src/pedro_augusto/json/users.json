@@ -1,0 +1,11 @@
+{
+    "usuario":
+    [
+        { "id":1,
+        "user":"teste_1",
+        "senha":"123456",
+        "Isreserva":false,
+        "IsDisponibiliza":false
+        }
+    ]
+}
