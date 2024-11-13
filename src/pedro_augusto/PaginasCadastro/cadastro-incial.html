@@ -70,10 +70,11 @@
                 <!--Campo para o usuario inserir seu e-mail -->
                 <div class="mb-3 w-100">
                     <label for="email" class="form-label">E-mail</label>
-                    <input id="email" type="text" class="form-control" />
+                    <input id="email" type="text" class="form-control"  aria-label="E-mail"
+                    pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras são permitidas" required />
                 </div>
                 <!--Campo para o usuario inserir seu nome de usuario -->
-                <div class="mb-3 w-100">
+                <div class="mb-3 w-100" >
                     <label for="usuario" class="form-label">Usuário</label>
                     <input id="usuario" type="text" class="form-control" />
                 </div>
@@ -93,7 +94,7 @@
                     <p style="margin-top:10px;">O que eu quero?</p>
                     <div class="d-flex flex-column ms-auto">
                         <div class="item">
-                            <input id="usuario-reservar-vagas"type="checkbox">
+                            <input id="usuario-reservar-vagas"type="checkbox" onclick="reservaOn()">
                             <label for="usuario-reservar-vagas">Reservar Vagas</label>
                        </div>
                        <div class="item">
