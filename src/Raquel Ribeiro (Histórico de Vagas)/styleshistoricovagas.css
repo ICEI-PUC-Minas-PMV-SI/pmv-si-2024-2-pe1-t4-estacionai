@@ -1,9 +1,9 @@
 body {
     flex-direction: column;
     min-height: 100vh;
-    background-color: white;
+    background-image: url(fundo-linhas.png);
     font-family: roboto;
-    margin: 0; /* Remove o espaçamento padrão */
+    margin: 0; 
 }
 
 .container3 {
@@ -13,8 +13,8 @@ body {
     width: 200%;
     max-width: 600px;
     padding: 20px;
-    margin: 0 auto; /* Centraliza a div no centro horizontal da página */
-    box-sizing: border-box; /* Garante que o padding não exceda a largura máxima */
+    margin: 0 auto; 
+    box-sizing: border-box; 
     text-align: left;
 }
 
@@ -35,7 +35,7 @@ h1 {
     display:flex;
 }
 .history-section {
-    background-color: white;
+    background-image: url(fundo-linhas.png);
     color: white;
     padding: 0px;
     border-radius: 20px;
