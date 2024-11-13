@@ -1,131 +1,133 @@
-
 body {
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
     background-color: white;
     font-family: roboto;
-}
-header h1 {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #0044cc;
+    margin: 0; /* Remove o espaçamento padrão */
 }
 
-.filter-section, .history-section, .receipt-section {
-    margin-top: 20px;
-    width: 90%;
-    max-width: 500px;
+.container3 {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    width: 200%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto; /* Centraliza a div no centro horizontal da página */
+    box-sizing: border-box; /* Garante que o padding não exceda a largura máxima */
+    text-align: left;
 }
 
-.filter-card{
-    background-color: #0044cc;
-    padding: 10px 20px;
-    border-radius: 8px;
+h1 {
+    text-align: center;
     color: white;
     margin-bottom: 20px;
 }
-.history-card {
-    background-color: #bfdaf0;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: black;
+
+.search-form {
+    background-color: #0055A5;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    flex-direction: column;
+    display:flex;
 }
-.receipt-card {
+.history-section {
+    background-color: white;
+    color: white;
+    padding: 0px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-direction: column;
+    display:flex;
+    
+    
+}    
+.receipt{
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     color: black;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flexbox
-   
-}
-.receipt-card .icon {
-    font-size: 50px;
-    color: #3a86ff;
-    margin-bottom: 10px;
-    text-align: center;
-}
-.receipt-card .valor {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #3a86ff;
-    text-align: center;
+    margin-top: 10px;
+    
 }
 
-.receipt-card .info p {
-    font-size: 16px;
-    color: #666;
-    margin: 5px 0;
-    text-align: center;
-}
-.filter-card h2 {
-    margin-bottom: 10px;
-}
-
-.filter-card label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.filter-card select, .filter-card input {
+.search-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
     border: none;
-    border-radius: 5px;
+    font-size: 16px;
+}
+.search-form label{
+    display: block;
+    margin-top: 20px;
+    align-items: center;
+    
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
+.result-item {
+    background-color: #e6f0ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ffa500;
-    color: white;
-    cursor: pointer;
-}
 
-.history-card h3 {
+.result-item h2 {
     font-size: 18px;
+    color: #003f8a;
 }
 
-.history-card p {
+.result-item p {
     margin: 5px 0;
+    color: black;
+}
+.btn-primary {
+    background-color: #ED9E1C; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px;
+    width: auto;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    
 }
 
-.price {
-    color: red;
-    font-weight: bold;
+
+.search-form button{
+    background-color: #ED9E1C; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px;
+    width: auto;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 120px;
+     
+}
+.history-section button{
+    background-color: #ED9E1C; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px;
+    width: auto;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-.receipt-card h3 {
-    text-align: center;
-    color:#3a86ff;
-}
-
-.total {
-    font-size: 32px;
-    text-align: center;
-    color: red;
-}
-.navbar {
-    padding: 16px 112px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    height: 104px;
-  }
-  
-  .navbar-brand img {
-    width: 98px;
-    height: 72px;
-  }
 
 
