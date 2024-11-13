@@ -21,6 +21,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet"
     />
+    
     <title>EstacionAí</title>
 </head>
 
@@ -68,11 +69,12 @@
             <form class="text-white d-flex flex-column align-items-center">
                 <!--Campo para o usuario inserir seu e-mail -->
                 <div class="mb-3 w-100">
-                    <label for="e-mail" class="form-label">E-mail</label>
-                    <input id="e-mail" type="text" class="form-control" />
+                    <label for="email" class="form-label">E-mail</label>
+                    <input id="email" type="text" class="form-control"  aria-label="E-mail"
+                    pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras são permitidas" required />
                 </div>
                 <!--Campo para o usuario inserir seu nome de usuario -->
-                <div class="mb-3 w-100">
+                <div class="mb-3 w-100" >
                     <label for="usuario" class="form-label">Usuário</label>
                     <input id="usuario" type="text" class="form-control" />
                 </div>
@@ -84,7 +86,7 @@
                  <!--Campo para o usuario definir sua senha -->
                  <div class="mb-3 w-100">
                     <label for="senha" class="form-label">Confirmar senha</label>
-                    <input id="senha" type="password" class="form-control" />                 
+                    <input id="senha_confirm" type="password" class="form-control" />                 
                 </div>
 
                 <!--Campo onde o usuario define como ele vai utilizar o aplicativo -->
@@ -92,7 +94,7 @@
                     <p style="margin-top:10px;">O que eu quero?</p>
                     <div class="d-flex flex-column ms-auto">
                         <div class="item">
-                            <input id="usuario-reservar-vagas"type="checkbox">
+                            <input id="usuario-reservar-vagas"type="checkbox" onclick="reservaOn()">
                             <label for="usuario-reservar-vagas">Reservar Vagas</label>
                        </div>
                        <div class="item">
@@ -103,7 +105,7 @@
                 </div>
 
                  <div class="d-flex justify-content-end ms-auto">
-                    <button type="submit" class="btn-entrar btn btn-warning w-100">Cadastrar</button>
+                    <button type="button" class="btn-entrar btn btn-warning w-100" onclick="submitlogin()">Cadastrar</button>
                  </div>   
             </form>
         </div>
@@ -139,5 +141,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"
     ></script>
+  <script src="/src/pedro_augusto/PaginasCadastro/cadastro.js">
+
+  </script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    font-family: roboto;
+}
+header h1 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #0044cc;
+}
+
+.filter-section, .history-section, .receipt-section {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.filter-card{
+    background-color: #0044cc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+}
+.history-card {
+    background-color: #bfdaf0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: black;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.receipt-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flexbox
+   
+}
+.receipt-card .icon {
+    font-size: 50px;
+    color: #3a86ff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.receipt-card .valor {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3a86ff;
+    text-align: center;
+}
+
+.receipt-card .info p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+    text-align: center;
+}
+.filter-card h2 {
+    margin-bottom: 10px;
+}
+
+.filter-card label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.filter-card select, .filter-card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+.history-card h3 {
+    font-size: 18px;
+}
+
+.history-card p {
+    margin: 5px 0;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+}
+
+.receipt-card h3 {
+    text-align: center;
+    color:#3a86ff;
+}
+
+.total {
+    font-size: 32px;
+    text-align: center;
+    color: red;
+}
