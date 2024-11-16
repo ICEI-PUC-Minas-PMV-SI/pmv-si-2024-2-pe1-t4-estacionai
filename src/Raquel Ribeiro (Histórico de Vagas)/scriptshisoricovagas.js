@@ -1,7 +1,7 @@
 const API_URL = "https://estacionai-bd.onrender.com/historico_reservas";
 
-// Pega a lista toda https://estacionai-bd.onrender.com/historico_reservas
-// Pega um item https://estacionai-bd.onrender.com/historico_reservas/:id
+// Pega a lista toda https://estacionai-bd.onrender.com/hisorico_reservas
+// Pega um item https://estacionai-bd.onrender.com/hisorico_reservas/:id
 
 // Função para enviar os dados para o servidor
 async function submitSearch() {
@@ -23,7 +23,7 @@ async function submitSearch() {
         //popularBancoHistorico();
         //apagarBancoHistorico();
 
-        // https://estacionai-bd.onrender.com/historico_reservas?idUsuario=2584&veiculo=Corolla
+        // https://estacionai-bd.onrender.com/hisorico_reservas?idUsuario=2584&veiculo=Corolla
 
 
         let filter = `?idUsuario=${idUsuario}`
