@@ -1,4 +1,4 @@
-const API_URL = "https://estacionai-bd.onrender.com/historico_reservas";
+const API_URL = "https://estacionai-bd.onrender.com/hisorico_reservas";
 
 // Pega a lista toda https://estacionai-bd.onrender.com/hisorico_reservas
 // Pega um item https://estacionai-bd.onrender.com/hisorico_reservas/:id
@@ -20,7 +20,7 @@ async function submitSearch() {
 
     try {
 
-        //popularBancoHistorico();
+        popularBancoHistorico();
         //apagarBancoHistorico();
 
         // https://estacionai-bd.onrender.com/hisorico_reservas?idUsuario=2584&veiculo=Corolla
