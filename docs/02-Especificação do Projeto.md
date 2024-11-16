@@ -92,7 +92,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-011| Exibir o preço da vaga antes de concluir a reserva | BAIXO |
 |RF-012| Permitir que o usuário cancele uma reserva | BAIXO |
 |RF-013| Notificar o usuário sobre o status de suas reservas (confirmada, cancelada, etc.) | BAIXO |
-|RF-014| Exibir um resumo para o proprietário de quantas vagas foram alocadas diariamente,semanalmente e mensalmente | BAIXA |
+|RF-014| Exibir um histórico de reservas de vagas do usuário | BAIXA |
 |RF-015| Permitir que os usuários atualizem e visualizem seus perfis | BAIXA |
 |RF-016| Permitir que o proprietário defina um tempo limite de cancelamento | BAIXA |
 

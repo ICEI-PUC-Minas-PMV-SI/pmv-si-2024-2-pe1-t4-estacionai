@@ -40,7 +40,7 @@ A tabela que se segue apresenta os requisitos funcionais e não-funcionais que r
 |RF-011| Exibir o preço da vaga antes de concluir a reserva |  Matheus Bon | home.html |
 |RF-012| Permitir que o usuário cancele uma reserva |  David Gerardo | --- |
 |RF-013| Notificar o usuário sobre o status de suas reservas (confirmada, cancelada, etc.) | Matheus Bon | home.html |
-|RF-014| Exibir um resumo para o proprietário de quantas vagas foram alocadas diariamente,semanalmente e mensalmente | David Gerardo | --- |
+|RF-014| Exibir um histórico de reservas de vagas do usuário | David Gerardo | --- |
 |RF-015| Permitir que os usuários atualizem e visualizem seus perfis | Rayana Eppennstein | MeusDados.html |
 |RF-016| Permitir que o proprietário defina um tempo limite de cancelamento | --- | --- |
 |RF-017| A aplicação deve permitir que qualquer usuári com ou sem login visualize "Sobre Nós" | Raquel Ribeiro | Sobrenos.html |
