@@ -20,7 +20,7 @@ async function submitSearch() {
 
     try {
 
-        popularBancoHistorico();
+        //popularBancoHistorico();
         //apagarBancoHistorico();
 
         // https://estacionai-bd.onrender.com/historico_reservas?idUsuario=2584&veiculo=Corolla
