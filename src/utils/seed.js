@@ -34,6 +34,8 @@ const estacionamentosSeed = [
         nome: "Estacionamento Central",
         endereco: "Rua Exemplo, 123",
         celular: "777777777",
+        valor: 15.67,
+        valor_tipo: "hora",
         vagas: [1, 2],
     },
 ];
