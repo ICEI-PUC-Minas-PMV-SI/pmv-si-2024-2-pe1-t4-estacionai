@@ -1,3 +1,5 @@
+const API_URL = "https://estacionai-bd.onrender.com/usuarios";
+
 // Função para capturar e enviar dados do formulário para o servidor
 document.getElementById("saveButton").addEventListener("click", function (event) {
     // Evita o comportamento padrão do botão
@@ -10,9 +12,9 @@ document.getElementById("saveButton").addEventListener("click", function (event)
     const senha = document.querySelector("input[placeholder='Senha']").value;
     const logradouro = document.querySelector("input[placeholder='Logradouro com Nº']").value;
     const cep = document.querySelector("input[placeholder='CEP']").value;
-    const veiculo = document.querySelector("input[placeholder='Meu Veículo']").value;
+    const modeloVeiculo = document.querySelector("input[placeholder='Modelo Veículo']").value;
     const placa = document.querySelector("input[placeholder='Placa do Carro']").value;
-    const telefone = document.querySelector("input[placeholder='Telefone para Contato']").value;
+    const cor = document.querySelector("input[placeholder='Cor']").value;
 
     // Cria um objeto com os dados capturados
     const dadosUsuario = {
@@ -20,15 +22,19 @@ document.getElementById("saveButton").addEventListener("click", function (event)
         email: email,
         cpfCnpj: cpfCnpj,
         senha: senha,
-        logradouro: logradouro,
-        cep: cep,
-        veiculo: veiculo,
-        placa: placa,
-        telefone: telefone
+        endereco: {
+            logradouro: logradouro,
+            cep: cep
+        },
+        veiculo: {
+            modelo: modeloVeiculo,
+            placa: placa,
+            cor: cor
+        }
     };
 
     // Envia os dados para o servidor usando a API fetch
-    fetch("https://estacionai-bd.onrender.com/usuarios", {
+    fetch(API_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -43,59 +49,60 @@ document.getElementById("saveButton").addEventListener("click", function (event)
         }
     })
     .then(data => {
-        // Exibe mensagem de sucesso
         alert("Dados enviados com sucesso!");
         console.log("Resposta do servidor:", data);
     })
     .catch(error => {
-        // Exibe mensagem de erro
         alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
         console.error("Erro:", error);
     });
 });
 
+// Habilita e desabilita os campos de entrada no modo de edição
 document.addEventListener("DOMContentLoaded", function () {
     const editButton = document.querySelector(".btn-edit-save:nth-child(1)");
     const saveButton = document.querySelector(".btn-edit-save:nth-child(2)");
     const inputs = document.querySelectorAll(".profile-info input");
     const uploadFoto = document.getElementById("uploadFoto");
     const profilePicture = document.querySelector(".profile-picture img");
-  
+
     // Função para habilitar campos de entrada no modo de edição
     editButton.addEventListener("click", function () {
-      inputs.forEach(input => input.disabled = false);
-      alert("Você agora pode editar os campos.");
+        inputs.forEach(input => input.disabled = false);
+        alert("Você agora pode editar os campos.");
     });
-  
+
     // Função para salvar os dados e desabilitar a edição dos campos
     saveButton.addEventListener("click", function () {
-      let allFilled = true;
-      inputs.forEach(input => {
-        if (input.value.trim() === "") {
-          allFilled = false;
-          input.classList.add("border-danger"); // Destaca campos vazios
+        let allFilled = true;
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                allFilled = false;
+                input.classList.add("border-danger"); // Destaca campos vazios
+            } else {
+                input.classList.remove("border-danger");
+            }
+        });
+
+        // Se todos os campos estiverem preenchidos, envie os dados e desabilite os campos
+        if (allFilled) {
+            alert("Dados salvos com sucesso!");
+            inputs.forEach(input => input.disabled = true); // Desabilita novamente os campos
+            document.getElementById("saveButton").click(); // Envia os dados
         } else {
-          input.classList.remove("border-danger");
+            alert("Por favor, preencha todos os campos.");
         }
-        input.disabled = true; // Desabilita novamente os campos
-      });
-      if (allFilled) {
-        alert("Dados salvos com sucesso!");
-      } else {
-        alert("Por favor, preencha todos os campos.");
-      }
     });
-  
+
     // Função para atualizar a foto de perfil com o upload
     uploadFoto.addEventListener("change", function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          profilePicture.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profilePicture.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
     });
-  });
-  
+});
