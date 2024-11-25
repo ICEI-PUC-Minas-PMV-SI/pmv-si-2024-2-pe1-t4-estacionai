@@ -2,49 +2,53 @@
 
  const URL = 'https://estacionai-bd.onrender.com/usuarios'
 
- function ValidarEmail(email){
-  const padrao = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
-  return padrao.test(email);
- }
-    const email = document.getElementById("email").value
-    const nome_usuario = document.getElementById("usuario").value;
-    const senha = document.getElementById("senha").value;  // Corrigido
-    const verificarSenha = document.getElementById("senha_confirm").value
-    const IsReserva = document.getElementById("usuario-reservar-vagas").value;
-    const IsDisponibiliza = document.getElementById("usuario-disponibilizar-vagas").value;
+function isEmailValid(email) {
+    // Expressão regular para validar e-mails
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
- reservaOn(set){
-  IsReserva = true
- }
+    // Testa se o e-mail corresponde ao padrão
+    return emailRegex.test(email);
+}
+
+
 
 //FUNÇÃO QUE O ENVIA OS DADOS PARA O JSON
 async function submitlogin(){
     // Capturando valor do HTML
+    const email = document.getElementById("email").value
+    const nome_usuario = document.getElementById("usuario").value;
+    const senha = document.getElementById("senha").value;  // Corrigido
+    const verificarSenha = document.getElementById("senha_confirm").value
+    const cargo = document.getElementById("tipo").value
+  
+
     
-    
-    
-    console.log("Print dados -- ", nome_usuario, senha, IsReserva, IsDisponibiliza,email," S",verificarSenha);
+    console.log("Print dados -- ", nome_usuario, senha, email,cargo,verificarSenha);
+
+  //VERIFICAÇÃO DE E-MAIL
+  if(!isEmailValid(email)){
+    alert("DIGITE UM E-MAIL VALIDO")
+    return erro
+  }
+  //VERIFICAÇÃO DE SENHA
+  if(senha!=verificarSenha){
+    alert("As senhas devem coincidir")
+    return erro
+  }
+
+
+
 
     // Criando um objeto com os dados
     const usuario = {
         
         user: nome_usuario,
         senha: senha,
-        IsDisponibiliza: IsDisponibiliza,
-        IsReserva: IsReserva,
+        cargo:cargo,
         email:email
     };
-    //Validação do tipo de cadastro
-    if(IsDisponibiliza==IsReserva){
-      alert("Campos preenchidos indevidamente")
-      return error
-    }
-
-    //Validação do e-mail
-    if(!ValidarEmail(email)){
-      alert("Por favor insira um e-mail valido")
-      return error
-    }
+   
+  
   
     //VERIFICADO DA COMPATIBILIDADE DE SENHAS
       if(senha==verificarSenha ){
