@@ -64,7 +64,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
-|*Caso de Teste*                                 |*CT01 - Criar conta parte 1 e 2*                                         |
+|*Caso de Teste*                                 |*CT01 - Histórico de vagas parte 1 e 2*                                         |
 |---|---|
 |Requisito Associado | RF-014 - Exibir um histórico de reservas de vagas do usuário|
 |Link do vídeo do teste realizado: |https://www.loom.com/share/6432e64d67d441aab197e222d8377156| 
