@@ -1,30 +1,3 @@
-<!--
-    Página: Vagas a Serem Aprovadas
-    Desenvolvedor: Pedro Salman
-
-    Descrição:
-    Esta página permite que o proprietário ou administrador gerencie as reservas pendentes de aprovação no sistema
-    de estacionamento. Através dela, é possível visualizar todas as reservas que aguardam aprovação e tomar ações 
-    como aprovar ou recusar cada uma.
-
-    Funcionalidades:
-    - Exibir uma lista de reservas pendentes com detalhes como nome do cliente, data e horário da reserva.
-    - Permitir que o proprietário aprove uma reserva, selecionando uma vaga específica para o cliente.
-    - Implementar validação no formulário de seleção de vaga para garantir que uma vaga seja escolhida antes da confirmação.
-    - Calcular dinamicamente o total de horas e o valor total a ser cobrado com base nos horários de início e fim da reserva.
-    - Exibir um modal de confirmação com os detalhes completos da reserva aprovada.
-    - Permitir que o proprietário recuse uma reserva, removendo-a da lista após confirmação.
-    - Atualizar a interface em tempo real após a aprovação ou recusa de uma reserva.
-
-    Tecnologias Utilizadas:
-    - HTML5 e CSS3 para a estrutura e estilização básica da página.
-    - Bootstrap 5 para componentes pré-estilizados e responsividade.
-    - JavaScript para manipulação do DOM, validação de formulários e lógica de negócio.
-    - Ícones do Bootstrap para enriquecer a interface visual.
-    - Uso de modais do Bootstrap para interações com o usuário.
-    - Simulação de dados com arrays JavaScript para representar reservas pendentes.
--->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -58,7 +31,16 @@
         }
 
         footer {
+            /* Estilos do footer */
+        }
 
+        .btn-aprov {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-aprov:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -126,9 +108,7 @@
                                 <label for="vagaSelect" class="form-label">Selecione a vaga</label>
                                 <select class="form-select" id="vagaSelect" required>
                                     <option value="" disabled selected>Escolha uma opção...</option>
-                                    <option value="Vaga 1">Vaga 1</option>
-                                    <option value="Vaga 2">Vaga 2</option>
-                                    <option value="Vaga 3">Vaga 3</option>
+                                    <!-- As opções serão carregadas dinamicamente -->
                                 </select>
                                 <!-- Mensagem de feedback para validação -->
                                 <div class="invalid-feedback">
@@ -186,142 +166,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script JavaScript para funcionalidades, futuramente sera movido para um arquivo separado-->
-    <script>
-        // Simulando dados de reservas pendentes
-        const reservations = [
-            {
-                id: 1,
-                clientName: 'Luke Skywalker',
-                date: '02/05/2024',
-                startTime: '18:00',
-                endTime: '20:00',
-                status: 'Pendente'
-            },
-            {
-                id: 2,
-                clientName: 'Darth Vader',
-                date: '02/05/2024',
-                startTime: '18:00',
-                endTime: '20:00',
-                status: 'Pendente'
-            }
-        ];
-
-        // Função para carregar as reservas na página
-        function loadReservations() {
-            const reservationsList = document.getElementById('reservationsList');
-            reservationsList.innerHTML = '';
-
-            reservations.forEach(reservation => {
-                // Criação do item de lista para cada reserva
-                const listItem = document.createElement('div');
-                listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-                listItem.innerHTML = `
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-person-circle me-3" style="font-size: 2rem; color: #6c757d;"></i>
-                        <div>
-                            <h5 class="mb-1">${reservation.clientName}</h5>
-                            <small>${reservation.date} | ${reservation.startTime} - ${reservation.endTime}</small>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-aprov me-2" onclick="openConfirmModal(${reservation.id})">Aprovar</button>
-                        <button class="btn btn-secondary" onclick="rejectReservation(${reservation.id})">Recusar</button>
-                    </div>
-                `;
-                reservationsList.appendChild(listItem);
-            });
-        }
-
-        // Carrega as reservas ao carregar a página
-        window.onload = loadReservations;
-
-        // Função para abrir o modal de confirmação
-        function openConfirmModal(reservationId) {
-            // Armazena o ID da reserva selecionada
-            document.getElementById('reservationId').value = reservationId;
-            const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-            confirmModal.show();
-        }
-
-        // Função para confirmar a reserva
-        document.getElementById('vagaForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const vagaSelect = document.getElementById('vagaSelect');
-            if (vagaSelect.checkValidity()) {
-                // Obter os dados da reserva
-                const reservationId = document.getElementById('reservationId').value;
-                const reservation = reservations.find(r => r.id == reservationId);
-
-                // Atualizar o status da reserva
-                reservation.status = 'Aprovada';
-
-                // Fechar o modal de seleção de vaga
-                const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
-                confirmModal.hide();
-
-                // Exibir o modal de confirmação
-                const reservationModal = new bootstrap.Modal(document.getElementById('reservationModal'));
-                reservationModal.show();
-
-                // Exibir detalhes da reserva
-                const totalHours = calculateHours(reservation.startTime, reservation.endTime);
-                const totalAmount = calculateTotal(reservation.startTime, reservation.endTime);
-
-                document.getElementById('reservationDetails').innerHTML = `
-                    <li class="d-flex justify-content-between"><strong>Ref Vaga:</strong> <span>${vagaSelect.value}</span></li>
-                    <li class="d-flex justify-content-between"><strong>Data de Reserva:</strong> <span>${reservation.date}</span></li>
-                    <li class="d-flex justify-content-between"><strong>Método de Pagamento:</strong> <span>No Local</span></li>
-                    <li class="d-flex justify-content-between"><strong>Total de horas:</strong> <span>${totalHours}h</span></li>
-                    <li class="d-flex justify-content-between"><strong>Locador:</strong> <span>${reservation.clientName}</span></li>
-                    <li class="d-flex justify-content-between"><strong>Total:</strong> <span>R$${totalAmount}</span></li>
-                    <li class="d-flex justify-content-between"><strong>Valor hora:</strong> <span>R$100,00</span></li>
-                `;
-
-                document.getElementById('reservationAmount').innerText = `R$${totalAmount}`;
-
-                // Remover a reserva da lista pendente
-                const index = reservations.findIndex(r => r.id == reservationId);
-                if (index > -1) {
-                    reservations.splice(index, 1);
-                    loadReservations();
-                }
-
-                // Limpar o formulário
-                vagaSelect.value = '';
-                vagaSelect.classList.remove('is-invalid');
-            } else {
-                // Adiciona classe para mostrar mensagem de erro
-                vagaSelect.classList.add('is-invalid');
-            }
-        });
-
-        // Função para recusar a reserva
-        function rejectReservation(reservationId) {
-            if (confirm('Tem certeza que deseja recusar esta reserva?')) {
-                // Remover a reserva da lista
-                const index = reservations.findIndex(r => r.id == reservationId);
-                if (index > -1) {
-                    reservations.splice(index, 1);
-                    loadReservations();
-                }
-            }
-        }
-
-        // Função para calcular o total de horas
-        function calculateHours(startTime, endTime) {
-            const start = parseInt(startTime.split(':')[0]) + parseInt(startTime.split(':')[1])/60;
-            const end = parseInt(endTime.split(':')[0]) + parseInt(endTime.split(':')[1])/60;
-            return (end - start).toFixed(2);
-        }
-
-        // Função para calcular o total a pagar
-        function calculateTotal(startTime, endTime) {
-            const hours = calculateHours(startTime, endTime);
-            const rate = 100; // Valor por hora
-            return (hours * rate).toFixed(2);
-        }
-    </script>
+    <!-- Incluindo o arquivo JavaScript externo -->
+    <script src="aprovacao.js"></script>
 </body>
 </html>
