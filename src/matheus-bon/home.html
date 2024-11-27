@@ -1,189 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
-      crossorigin="anonymous"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="../styles.css" />
-    <title>Home | EstacionAí</title>
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-              <img src="../images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
-                  <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="home.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="meus_dados.html">Meus Dados</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="sobre_nos.html">Sobre Nós</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="fale_conosco.html">Fale Conosco</a>
-                  </li>
-                  <li class="nav-item ms-3">
-                    <div class="ml-auto">
-                        <a class="btn btn-outline-secondary" href="#" role="button"
-                          >Criar conta</a
-                        >
-                        <a class="btn btn-warning" href="#" role="button">Entrar</a>
-                  </li>
-              </ul>
-          </div>
+  <link rel="stylesheet" href="../styles.css" />
+  <title>Home | EstacionAí</title>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="meus_dados.html">Meus Dados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre_nos.html">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fale_conosco.html">Fale Conosco</a>
+          </li>
+          <li class="nav-item ms-3">
+            <div class="ml-auto">
+              <a class="btn btn-outline-secondary" href="#" role="button">Criar conta</a>
+              <a class="btn btn-warning" href="#" role="button">Entrar</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero -->
-    <div
-      class="hero text-center mt-5"
-      style="
+  <!-- Hero -->
+  <div class="hero text-center mt-5" style="
         background-image: url('../images/fundo.svg');
         background-position: center;
         height: 400px;
-      "
-    >
-      <div
-        class="container d-flex flex-column align-items-center justify-content-center gap-5"
-      >
-        <h1>Busque Vagas Agora</h1>
-        <form class="d-flex justify-content-center mt-3 w-100">
-          <div class="container mt-5">
-            <div class="search-container">
-              <input
-                type="text"
-                class="form-control search-input"
-                placeholder="Pesquise uma vaga"
-                id="search-box"
-              />
-              <button class="btn search-btn">Pesquisar</button>
-            </div>
-            <div class="search-suggestions d-none" id="suggestions-box">
-              <ul class="list-group">
-                <li class="list-group-item">Estacionamento Av. Branco</li>
-                <li class="list-group-item">Estacionamento Av. Ribeira</li>
-              </ul>
-            </div>
-          </div>
-        </form>
+      ">
+    <div class="container d-flex flex-column align-items-center justify-content-center gap-5">
+      <h1>Busque Vagas Agora</h1>
+
+      <div class="search-container w-100">
+        <input type="text" class="form-control search-input" placeholder="Pesquise uma vaga" id="search-box" />
+        <button class="btn search-btn">Pesquisar</button>
+      </div>
+      <div class="search-suggestions d-none w-100" id="suggestions-box">
+        <ul class="list-group w-100" id="suggestions-list">
+        </ul>
+      </div>
+
+      <div>
+        <button class="btn-parking-list">
+          <a href="busca-vagas.html">
+            <i class="bi bi-send" id="btn-icon-parking-list"></i>
+            Lista de vagas
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-white text-center py-5 mt-5" id="howToWorks">
+    <h1 class="text-light mb-5">Como funciona?</h1>
+    <div class="container mt-4">
+      <div class="d-inline-flex justify-content-center align-items-center gap-5">
         <div>
-          <button class="btn-parking-list">
-            <a href="busca-vagas.html">
-              <i class="bi bi-send" id="btn-icon-parking-list"></i>
-              Lista de vagas
-            </a>
-          </button>
+          <i class="bi bi-search" style="font-size: 75px; color: #ed9e1d"></i>
+          <h3>Buscar</h3>
+          <p>Busque e compare preços dos estacionamentos</p>
+        </div>
+
+        <div>
+          <i class="bi bi-calendar-check" style="font-size: 75px; color: #ed9e1d"></i>
+          <h3>Reservar</h3>
+          <p>Reserve sua vaga e receba seu ticket no site</p>
+        </div>
+
+        <div>
+          <i class="bi bi-p-square" style="font-size: 75px; color: #ed9e1d"></i>
+          <h3>Estacionar</h3>
+          <p>Ao chegar, siga as instruções do ticket e estacionaí</p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="text-white text-center py-5 mt-5" id="howToWorks">
-      <h1 class="text-light mb-5">Como funciona?</h1>
-      <div class="container mt-4">
-        <div
-          class="d-inline-flex justify-content-center align-items-center gap-5"
-        >
-          <div>
-            <i class="bi bi-search" style="font-size: 75px; color: #ed9e1d"></i>
-            <h3>Buscar</h3>
-            <p>Busque e compare preços dos estacionamentos</p>
-          </div>
-
-          <div>
-            <i
-              class="bi bi-calendar-check"
-              style="font-size: 75px; color: #ed9e1d"
-            ></i>
-            <h3>Reservar</h3>
-            <p>Reserve sua vaga e receba seu ticket no site</p>
-          </div>
-
-          <div>
-            <i
-              class="bi bi-p-square"
-              style="font-size: 75px; color: #ed9e1d"
-            ></i>
-            <h3>Estacionar</h3>
-            <p>Ao chegar, siga as instruções do ticket e estacionaí</p>
-          </div>
-        </div>
-      </div>
+  <footer class="container d-flex flex-wrap justify-content-between align-items-center py-2 my-4">
+    <div class="col-md-4 d-flex align-items-center">
+      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 EstacionAí, Inc</span>
     </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-5">
+        <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-instagram"></i></a>
+        <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-facebook"></i></a>
+        <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-twitter"></i></a>
+      </li>
+    </ul>
+  </footer>
 
-    <footer
-      class="container d-flex flex-wrap justify-content-between align-items-center py-2 my-4"
-    >
-      <div class="col-md-4 d-flex align-items-center">
-        <span class="mb-3 mb-md-0 text-body-secondary"
-          >&copy; 2024 EstacionAí, Inc</span
-        >
-      </div>
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-5">
-          <a class="text-body-secondary rs fs-5 mx-1" href="#"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a class="text-body-secondary rs fs-5 mx-1" href="#"
-            ><i class="bi bi-facebook"></i
-          ></a>
-          <a class="text-body-secondary rs fs-5 mx-1" href="#"
-            ><i class="bi bi-twitter"></i
-          ></a>
-        </li>
-      </ul>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-    <script>
-      const searchBox = document.getElementById("search-box");
-      const suggestionsBox = document.getElementById("suggestions-box");
+  <script src="js/home.js"></script>
+</body>
 
-      searchBox.addEventListener("focus", function () {
-        suggestionsBox.classList.remove("d-none");
-      });
-
-      document.addEventListener("click", function (event) {
-        if (!event.target.closest(".search-container")) {
-          suggestionsBox.classList.add("d-none");
-        }
-      });
-    </script>
-
-    <script src="js/api-user.js"></script>
-    <!-- <script src="/src/seed/seed.js"></script> -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>
