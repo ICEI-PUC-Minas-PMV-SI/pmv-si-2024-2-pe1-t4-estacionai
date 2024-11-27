@@ -32,7 +32,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de dados válidos no filtro
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT01 – Histórico de vagas parte 1**
+**Caso de Teste** | **CT02 – Histórico de vagas parte 2**
  :--------------: | ------------
 **Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas <br> 3) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 4) Clique no botão "consultar".<br>5) Clique no botão "ver recibo".<br>6) Clique no botão voltar caso deseje retornar.
 **Requisitos associados** | RF-014
