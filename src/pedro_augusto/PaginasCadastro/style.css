@@ -66,3 +66,8 @@ body {background-image: url(/src/images/fundo-linhas.png)}
 .form-label {
     margin-bottom: 5px;
 }
+
+#tipo{
+    margin-top: 13px;
+    border-color: white;
+}

@@ -65,12 +65,6 @@
           <input type="text" class="form-control search-input" placeholder="Pesquise uma vaga" id="search-box" />
           <button class="btn search-btn">Pesquisar</button>
         </div>
-        <div class="search-suggestions d-none" id="suggestions-box">
-          <ul class="list-group">
-            <li class="list-group-item">Estacionamento Av. Branco</li>
-            <li class="list-group-item">Estacionamento Av. Ribeira</li>
-          </ul>
-        </div>
       </div>
     </form>
 
@@ -109,9 +103,14 @@
         <div class="modal-body">
           <p><strong>Endereço:</strong> <span id="modal-endereco"></span></p>
           <p><strong>Valor:</strong> <span id="modal-valor"></span></p>
-          <p><strong>Horário de Funcionamento:</strong> <span id="modal-horario"></span></p>
-          <p><strong>Capacidade:</strong> <span id="modal-capacidade"></span></p>
+          <!-- <p><strong>Horário de Funcionamento:</strong> <span id="modal-horario"></span></p> -->
+          <!-- <p><strong>Capacidade:</strong> <span id="modal-capacidade"></span></p> -->
+          <div class="mt-3">
+            <label for="tempo-desejado" class="form-label" id="tempo-desejado-lab"><strong></strong></label>
+            <input type="number" id="tempo-desejado" class="form-control" min="1"/>
+          </div>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
           <button type="button" class="btn btn-primary" id="confirmar-btn">Confirmar</button>
@@ -131,14 +130,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h4>Estacionamento Esperança</h4>
-          <p><strong>Ref Vaga:</strong> Vaga A</p>
-          <p><strong>Data de Reserva:</strong> 20/05/2022 - 20/05/2022</p>
-          <p><strong>Método de Pagamento:</strong> No Local</p>
-          <p><strong>Total de horas:</strong> 48:00h</p>
-          <p><strong>Locador:</strong> Alfredo Marques</p>
-          <p><strong>Total:</strong> R$200,00</p>
-          <p><strong>Valor hora:</strong> R$4,16</p>
+          <h4 class="modal-title" id="modalEstacionamentoLabel">Título do Estacionamento</h4>
+          <p><strong>Endereço:</strong> <span id="modal-endereco"></span></p>
+          <p><strong>Valor:</strong> <span id="modal-valor"></span></p>
+          <p><strong>Horário de Funcionamento:</strong> <span id="modal-horario"></span></p>
+          <p><strong>Capacidade:</strong> <span id="modal-capacidade"></span></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-bs-dismiss="modal">
@@ -156,7 +152,6 @@
 
   <script src="/src/utils/utils.js"></script>
   <script src="js/buscaVagas.js"></script>
-
 </body>
 
 </html>
