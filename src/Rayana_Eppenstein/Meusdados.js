@@ -1,5 +1,11 @@
 const API_URL = "https://estacionai-bd.onrender.com/usuarios";
 
+// Redireciona para a página históricovagas
+document.querySelector(".btn-historico").addEventListener("click", function() {
+    window.location.href = "Raquel Ribeiro (Histórico de Vagas)/historicovagas.html"; 
+});
+
+
 // Função para capturar e enviar dados do formulário para o servidor
 document.getElementById("saveButton").addEventListener("click", function (event) {
     // Evita o comportamento padrão do botão
@@ -106,3 +112,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
