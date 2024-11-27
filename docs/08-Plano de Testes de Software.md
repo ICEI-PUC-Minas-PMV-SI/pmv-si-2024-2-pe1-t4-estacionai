@@ -32,7 +32,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de dados válidos no filtro
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT01 – Histórico de vagas parte 1**
+**Caso de Teste** | **CT02 – Histórico de vagas parte 2**
  :--------------: | ------------
 **Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas <br> 3) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 4) Clique no botão "consultar".<br>5) Clique no botão "ver recibo".<br>6) Clique no botão voltar caso deseje retornar.
 **Requisitos associados** | RF-014
@@ -64,7 +64,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
-|*Caso de Teste*                                 |*CT01 - Criar conta parte 1 e 2*                                         |
+|*Caso de Teste*                                 |*CT01 - Histórico de vagas parte 1 e 2*                                         |
 |---|---|
 |Requisito Associado | RF-014 - Exibir um histórico de reservas de vagas do usuário|
 |Link do vídeo do teste realizado: |https://www.loom.com/share/6432e64d67d441aab197e222d8377156| 
