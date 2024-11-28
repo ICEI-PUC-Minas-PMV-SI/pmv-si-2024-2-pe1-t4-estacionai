@@ -65,8 +65,13 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
 **Resultado obtido** | Sucesso
 
-
-
+**Caso de Teste** | **CT04 – Dados de Usuário**
+ :--------------: | ------------
+**Procedimento**  | 1) Clique em Meus Dados localizado na Navbar. <br> 2) Preencha os dados para salvar ou editar cadastro. <br> 3) Clique no botão "salvar" para salvar o cadastro.<br>4) Clique no botão "Editar" em caso de edição de cadastro.<br>5) Clique no botão "Histórico de Vagas" caso deseje visualizar o histórico das vagas.
+**Requisitos associados** | RF-001
+**Resultado esperado** | Atualização e registro dos dados pessoais disponíveis somente pelo usuário da conta
+**Dados de entrada** | Inputs 'Nome de Usuário','nome','sobrenome','Modelo Veículo','Placa do Carro','Cor','CPF/CNPJ','Email','Senha','Logradouro com Nº','Telefone'
+**Resultado obtido** | "Dados enviados com sucesso!"
 
 ## Registro dos Testes de Software
 
