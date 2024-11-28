@@ -65,7 +65,10 @@ async function submitlogin(){
           const retorno = await fetch(URL, config);    
   
           if (retorno.ok) {
-            console.log("DEU CERTO");
+            const user = await retorno.json();
+            const id = user.id;
+            localStorage.setItem("idUsuario", id);
+            window.location.href = "/src/Rayana_Eppenstein/MeusDados.html";
           } else {
             console.log("Deu errado", retorno.status, retorno.statusText);
           }

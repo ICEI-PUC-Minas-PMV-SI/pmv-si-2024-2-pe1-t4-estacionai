@@ -1,8 +1,8 @@
 const API_URL = "https://estacionai-bd.onrender.com/usuarios";
 
 // Redireciona para a página históricovagas
-document.querySelector(".btn-historico").addEventListener("click", function() {
-    window.location.href = "RaquelRibeiroHistoricodeVagas/historicovagas.html"; 
+document.querySelector(".btn-historico").addEventListener("click", function () {
+    window.location.href = "/src/RaquelRibeiroHistoricodeVagas/historicovagas.html";
 });
 
 
@@ -47,21 +47,21 @@ document.getElementById("saveButton").addEventListener("click", function (event)
         },
         body: JSON.stringify(dadosUsuario)
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Erro ao enviar os dados para o servidor");
-        }
-    })
-    .then(data => {
-        alert("Dados enviados com sucesso!");
-        console.log("Resposta do servidor:", data);
-    })
-    .catch(error => {
-        alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
-        console.error("Erro:", error);
-    });
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Erro ao enviar os dados para o servidor");
+            }
+        })
+        .then(data => {
+            alert("Dados enviados com sucesso!");
+            console.log("Resposta do servidor:", data);
+        })
+        .catch(error => {
+            alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
+            console.error("Erro:", error);
+        });
 });
 
 // Habilita e desabilita os campos de entrada no modo de edição
@@ -71,6 +71,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputs = document.querySelectorAll(".profile-info input");
     const uploadFoto = document.getElementById("uploadFoto");
     const profilePicture = document.querySelector(".profile-picture img");
+    const idUsuario = localStorage.getItem("idUsuario");
+
+    fetch(`${API_URL}/${idUsuario}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    }).then(async (data) => {
+        const user = await data.json();
+        const nomeUsuario = user.user;
+        const inputNomeUsuario = document.getElementById("nome-usuario")
+        inputNomeUsuario.value = nomeUsuario
+        
+    })
+
+
 
     // Função para habilitar campos de entrada no modo de edição
     editButton.addEventListener("click", function () {
