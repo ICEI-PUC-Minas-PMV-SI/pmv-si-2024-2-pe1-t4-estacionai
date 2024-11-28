@@ -13,14 +13,18 @@ document.getElementById("saveButton").addEventListener("click", function (event)
 
     // Captura os dados do formulário
     const nomeUsuario = document.querySelector("input[placeholder='Nome de Usuário']").value;
-    const email = document.querySelector("input[placeholder='Email']").value;
-    const cpfCnpj = document.querySelector("input[placeholder='CPF/CNPJ']").value;
-    const senha = document.querySelector("input[placeholder='Senha']").value;
-    const logradouro = document.querySelector("input[placeholder='Logradouro com Nº']").value;
-    const cep = document.querySelector("input[placeholder='CEP']").value;
+    const nome = document.querySelector("input[placeholder='nome']").value;
+    const sobrenome = document.querySelector("input[placeholder='sobrenome']").value;
     const modeloVeiculo = document.querySelector("input[placeholder='Modelo Veículo']").value;
     const placa = document.querySelector("input[placeholder='Placa do Carro']").value;
     const cor = document.querySelector("input[placeholder='Cor']").value;
+    const cpfCnpj = document.querySelector("input[placeholder='CPF/CNPJ']").value;
+    const email = document.querySelector("input[placeholder='Email']").value;
+    const senha = document.querySelector("input[placeholder='Senha']").value;
+    const logradouro = document.querySelector("input[placeholder='Logradouro com Nº']").value;
+    const telefone = document.querySelector("input[placeholder='Telefone']").value;
+    
+    
 
     // Cria um objeto com os dados capturados
     const dadosUsuario = {
@@ -28,6 +32,7 @@ document.getElementById("saveButton").addEventListener("click", function (event)
         email: email,
         cpfCnpj: cpfCnpj,
         senha: senha,
+        telefone: telefone,
         endereco: {
             logradouro: logradouro,
             cep: cep
