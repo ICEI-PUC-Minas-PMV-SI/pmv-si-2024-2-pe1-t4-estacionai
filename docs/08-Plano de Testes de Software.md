@@ -87,6 +87,11 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
 |Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
 
+|*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
+|---|---|
+|Requisito Associado | RF-001	Permitir que o proprietário cadastre seu estabelecimento	|
+|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)| 
+
 
 ## Avaliação dos Testes de Software
 
