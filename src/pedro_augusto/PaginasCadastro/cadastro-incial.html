@@ -93,14 +93,10 @@
                 <div class="mb-3 w-100 d-flex justify-content-between">
                     <p style="margin-top:10px;">O que eu quero?</p>
                     <div class="d-flex flex-column ms-auto">
-                        <div class="item">
-                            <input id="usuario-reservar-vagas"type="checkbox" onclick="reservaOn()">
-                            <label for="usuario-reservar-vagas">Reservar Vagas</label>
-                       </div>
-                       <div class="item">
-                        <input id="usuario-disponibilizar-vagas"type="checkbox">
-                        <label for="usuario-disponibilizar-vagas">Disponibilizar vagas</label>   
-                       </div>                        
+                      <select  id="tipo">
+                        <option value="admin"> Reservar vagas</option>
+                        <option value="cliente">Disponibilizar vagas</option>
+                      </select>                       
                     </div>       
                 </div>
 
