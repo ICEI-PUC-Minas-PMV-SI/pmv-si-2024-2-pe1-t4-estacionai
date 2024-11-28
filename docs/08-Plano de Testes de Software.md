@@ -127,12 +127,26 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
+| 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
+| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
 | 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
 
 
-
 ## Registro de Testes de Usabilidade
+
+**Cenário 1:** Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 4.5                    | 14.50 segundos                  |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 12.50 segundos |
+
+
+
+**Comentário do usuário:** Achei fácil acessar as informações e não tive dificuldade em conclui-las.
+
+
+
 
 Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
 
@@ -167,6 +181,19 @@ Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,0
     tanto na hora da pesquisa, quanto depois dela, nos resultados.
 
 ## Avaliação dos Testes de Usabilidade
+
+
+Os resultados mostraram que a aplicação web apresentou um bom desempenho, com alta taxa de sucesso na conclusão dos cenários propostos. Todos os objetivos foram alcançados de forma eficiente, indicando que a interface é funcional e atende às necessidades dos usuários.
+
+Além disso, os usuários demonstraram grande satisfação com a experiência, como evidenciado pelas médias de avaliação, que variaram entre 4 (bom) e 5 (ótimo). Esses números reforçam a qualidade da aplicação em termos de usabilidade e aceitação.
+
+Quanto ao tempo de execução dos cenários, foi constatada uma semelhança entre o tempo médio dos usuários e o do especialista/desenvolvedor. Essa proximidade sugere que o design da aplicação facilita a navegação e a execução das tarefas, minimizando a curva de aprendizado e garantindo uma interação intuitiva. Esses resultados destacam o potencial da aplicação para atender a um público amplo e diversificado.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
 
