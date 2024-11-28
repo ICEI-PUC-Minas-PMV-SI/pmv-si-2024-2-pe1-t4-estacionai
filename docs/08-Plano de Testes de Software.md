@@ -26,7 +26,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 **Caso de Teste** | **CT01 – Histórico de vagas parte 1**
  :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas <br> 3) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 4) Clique no botão "consultar".
+**Procedimento**  | 1) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas. <br> 2) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 3) Clique no botão "consultar".
 **Requisitos associados** | RF-014
 **Resultado esperado** | Prosseguir para a parte 2 do Histórico de Vagas
 **Dados de entrada** | Inserção de dados válidos no filtro
@@ -34,7 +34,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 **Caso de Teste** | **CT02 – Histórico de vagas parte 2**
  :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas <br> 3) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 4) Clique no botão "consultar".<br>5) Clique no botão "ver recibo".<br>6) Clique no botão voltar caso deseje retornar.
+**Procedimento**  | 1) Clique em Meus Dados localizado na Navbar em seguida em  Histórico de vagas. <br> 2) Preencha o nome do estacionamento e/ou, modelo do veículo e placa. <br> 3) Clique no botão "consultar".<br>4) Clique no botão "ver recibo".<br>5) Clique no botão voltar caso deseje retornar.
 **Requisitos associados** | RF-014
 **Resultado esperado** | Prosseguir para a parte 2 do Histórico de Vagas
 **Dados de entrada** | Inserção de dados válidos no filtro
@@ -65,8 +65,13 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
 **Resultado obtido** | Sucesso
 
-
-
+**Caso de Teste** | **CT04 – Dados de Usuário**
+ :--------------: | ------------
+**Procedimento**  | 1) Clique em Meus Dados localizado na Navbar. <br> 2) Preencha os dados para salvar ou editar cadastro. <br> 3) Clique no botão "salvar" para salvar o cadastro.<br>4) Clique no botão "Editar" em caso de edição de cadastro.<br>5) Clique no botão "Histórico de Vagas" caso deseje visualizar o histórico das vagas.
+**Requisitos associados** | RF-001
+**Resultado esperado** | Atualização e registro dos dados pessoais disponíveis somente pelo usuário da conta
+**Dados de entrada** | Inputs 'Nome de Usuário','nome','sobrenome','Modelo Veículo','Placa do Carro','Cor','CPF/CNPJ','Email','Senha','Logradouro com Nº','Telefone'
+**Resultado obtido** | "Dados enviados com sucesso!"
 
 ## Registro dos Testes de Software
 
@@ -86,6 +91,11 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |---|---|
 |Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
 |Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+
+|*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
+|---|---|
+|Requisito Associado | RF-001	Permitir que o proprietário cadastre seu estabelecimento	|
+|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)| 
 
 
 ## Avaliação dos Testes de Software
@@ -127,12 +137,26 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
+| 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
+| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
 | 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
 
 
-
 ## Registro de Testes de Usabilidade
+
+**Cenário 1:** Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 4.5                    | 14.50 segundos                  |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 12.50 segundos |
+
+
+
+**Comentário do usuário:** Achei fácil acessar as informações e não tive dificuldade em conclui-las.
+
+
+
 
 Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
 
@@ -167,6 +191,19 @@ Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,0
     tanto na hora da pesquisa, quanto depois dela, nos resultados.
 
 ## Avaliação dos Testes de Usabilidade
+
+
+Os resultados mostraram que a aplicação web apresentou um bom desempenho, com alta taxa de sucesso na conclusão dos cenários propostos. Todos os objetivos foram alcançados de forma eficiente, indicando que a interface é funcional e atende às necessidades dos usuários.
+
+Além disso, os usuários demonstraram grande satisfação com a experiência, como evidenciado pelas médias de avaliação, que variaram entre 4 (bom) e 5 (ótimo). Esses números reforçam a qualidade da aplicação em termos de usabilidade e aceitação.
+
+Quanto ao tempo de execução dos cenários, foi constatada uma semelhança entre o tempo médio dos usuários e o do especialista/desenvolvedor. Essa proximidade sugere que o design da aplicação facilita a navegação e a execução das tarefas, minimizando a curva de aprendizado e garantindo uma interação intuitiva. Esses resultados destacam o potencial da aplicação para atender a um público amplo e diversificado.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
 
