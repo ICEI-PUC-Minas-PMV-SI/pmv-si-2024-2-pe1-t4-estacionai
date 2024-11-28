@@ -26,8 +26,12 @@ function buscar() {
       );
 
       if (usuarioEncontrado) {
-        alert("Login bem-sucedido! Bem-vindo, " + user + ".");
-        // Redirecionar ou executar outras ações de sucesso
+        const userId = usuarioEncontrado.id; // Aqui você recupera o ID do usuário
+        alert(`Login bem-sucedido! Bem-vindo, ${user}`);
+
+        //ARMAZENAMENTO DA VARIAVEL NO LOCAL STORAGE
+         localStorage.setItem('userId', userId);
+       
       } else {
         alert("Usuário ou senha incorretos!");
       }
