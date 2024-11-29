@@ -12,8 +12,8 @@ async function submitSearch() {
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = ""; // Limpar resultados anteriores
 
-    // const idUsuario = localStorage.getItem('idUsuario');
-    const idUsuario = "2584";
+    const userId = localStorage.getItem('userId');
+    //const idUsuario = "2584";
 
     
 
@@ -26,7 +26,7 @@ async function submitSearch() {
         // https://estacionai-bd.onrender.com/historico_reservas?idUsuario=2584&veiculo=Corolla
 
 
-        let filter = `?idUsuario=${idUsuario}`
+        let filter = `?userId=${userId}`
 
         if (local) {
             filter = filter + `&estacionamento=${local}`;
