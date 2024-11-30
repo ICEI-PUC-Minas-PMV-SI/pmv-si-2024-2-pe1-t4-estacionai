@@ -52,9 +52,9 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Caso de Teste** | **CT01 - Criar conta parte 1**
  :--------------: | ------------
 **Procedimento**  | 1) Na pagina inicial home clique em criar conta <br> 2) Preencha os dados de login <br> 2) Selecione como você deseja utilizar o aplicativo <br> 3) Clique no botão "Continuar".
-**Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
+**Requisitos associados** | RF-007
+**Resultado esperado** | Prosseguir para a parte final do cadastro de usuario
+**Dados de entrada** | E-mail válido,usuário dentros do padrões, senha e confirmação de senha iguais
 **Resultado obtido** | Sucesso
 
 **Caso de Teste** | **CT02 - Criar conta parte 2**
