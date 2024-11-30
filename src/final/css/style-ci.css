@@ -1,0 +1,73 @@
+body {background-image: url(/src/images/fundo-linhas.png)}
+
+.btn-entrar{
+    background-color:#ED9E1D !important;
+    width:auto;
+    height:auto;
+    min-height:50px;
+    max-width:133px;
+    color: white;
+    margin-bottom:3px;
+
+
+}
+
+.form-class{
+    background-color:#0055a5!important;
+    width:400px;
+    height:550px;
+    padding:45px !important;
+
+    border-radius: 15px;
+}
+
+
+.logo{
+    max-height: 50px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+.logo-2{
+    width:auto;
+    height: auto;
+    max-width:150px;
+    max-height:150px;
+}
+
+.input-car{
+    max-height:25px;
+    background-color: #0055a5;
+    color: white;
+    margin: 2px;
+}
+
+.navbar-brand img {
+    width: 98px;
+    height: 72px;
+}
+
+.navbar {
+    padding: 16px 112px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 104px;
+}
+
+.input-car {
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+.form-class {
+    background-color: #1E1E2D;
+    width: 435px;
+    height: auto;
+    border-radius: 15px;
+}
+.form-label {
+    margin-bottom: 5px;
+}
+
+#tipo{
+    margin-top: 13px;
+    border-color: white;
+}

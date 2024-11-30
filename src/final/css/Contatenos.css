@@ -1,0 +1,114 @@
+body {
+    margin-left: 0;
+    font-family: Arial, sans-serif, 12px;
+    color: #0055A5;
+}
+
+/* Container1 formulário e FAQ */
+.container1 {
+    display: flex;
+    height: 100vh;
+    padding: 10px; 
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Estilo do formulário */
+.formulario, .faq {
+    flex: 1;
+    padding: 10px;
+    padding-right: 45px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 0px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eeebeb;
+}
+
+button {
+    background-color: #ED9E1D;
+    color: black; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: left;
+}
+
+/* Estilos dos títulos */
+h2 {
+    color: #0055A5;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 10px;
+}
+
+/* Estilo da FAQ */
+.faq {
+    padding-left: 45px;
+    margin-top: 15px;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.faq-item h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.faq-item p {
+    margin: 0;
+}
+
+.navbar {
+    padding: 16px 112px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+  
+.navbar-brand img {
+    width: 98px;
+    height: 72px;
+}
+
+.btn-primary {
+border: 0;
+border-radius: 8px;
+background-color: #ed9e1d;
+color: #3c3c3c;
+}
+
+.btn-primary:hover {
+background-color: #d78a14;
+color: #3c3c3c;
+}
+
+.btn-primary:focus {
+box-shadow: 0 0 0 0.2rem rgba(237, 158, 29, 0.5);
+}
+  
+.list-group-item:hover {
+    background-color: #d9d9d9;
+}
+
+
