@@ -59,7 +59,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 **Caso de Teste** | **CT02 - Criar conta parte 2**
  :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos referentes ao cadastro com dados válidos, e um arquivo png<br> 2) Clique no botão "Salvar" <br> 
+**Procedimento**  | 1) Preencha todos os campos referentes ao cadastro com dados válidos, e um arquivo png<br> 2) Clique no botão "Salvar" <br> 3) Realizar o login com o usuario e senha cadastrados <br> 
 **Requisitos associados** | RF-007
 **Resultado esperado** | Usuário cadastrado com sucesso
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
