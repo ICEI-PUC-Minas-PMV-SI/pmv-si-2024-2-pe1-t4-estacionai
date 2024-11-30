@@ -48,23 +48,6 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de um tempo correto para reservar a vaga
 **Resultado obtido** | Sucesso
 
-
-**Caso de Teste** | **CT01 - Criar conta parte 1**
- :--------------: | ------------
-**Procedimento**  | 1) Na pagina inicial home clique em criar conta <br> 2) Preencha os dados de login <br> 2) Selecione como você deseja utilizar o aplicativo <br> 3) Clique no botão "Continuar".
-**Requisitos associados** | RF-007
-**Resultado esperado** | Prosseguir para a parte final do cadastro de usuario
-**Dados de entrada** | E-mail válido,usuário dentro do padrões, senha e confirmação de senha iguais
-**Resultado obtido** | Sucesso
-
-**Caso de Teste** | **CT02 - Criar conta parte 2**
- :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos referentes ao cadastro com dados válidos, e um arquivo png<br> 2) Clique no botão "Salvar" <br> 3) Realizar o login com o usuario e senha cadastrados <br> 
-**Requisitos associados** | RF-007
-**Resultado esperado** | Usuário cadastrado com sucesso
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
-
 **Caso de Teste** | **CT04 – Dados de Usuário**
  :--------------: | ------------
 **Procedimento**  | 1) Clique em Meus Dados localizado na Navbar. <br> 2) Preencha os dados para salvar ou editar cadastro. <br> 3) Clique no botão "salvar" para salvar o cadastro.<br>4) Clique no botão "Editar" em caso de edição de cadastro.<br>5) Clique no botão "Histórico de Vagas" caso deseje visualizar o histórico das vagas.
@@ -86,11 +69,6 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |---|---|
 |Requisito Associado | RF-008 & RF-009 & RF-010 & RF-011 - Exibir, pesquisar e reservar uma vaga na Lista de Vagas|
 |Link do vídeo do teste realizado: |https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing| 
-
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
-|---|---|
-|Requisito Associado | RF-007 - Implementar um sistema de login/cadastro|
-|Link do vídeo do teste realizado: | https://drive.google.com/file/d/14UcfNU1zfUcln_-k5p1KXYn7GjYQoD8K/view?usp=drive_link | 
 
 |*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
@@ -138,8 +116,6 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
 | 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
 
 
 ## Registro de Testes de Usabilidade
