@@ -56,6 +56,22 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inputs 'Nome de Usuário','nome','sobrenome','Modelo Veículo','Placa do Carro','Cor','CPF/CNPJ','Email','Senha','Logradouro com Nº','Telefone'
 **Resultado obtido** | "Dados enviados com sucesso!"
 
+*Caso de Teste* | *CT05 - Criar conta parte 1*
+ :--------------: | ------------
+*Procedimento*  | 1) Na pagina inicial home clique em criar conta <br> 2) Preencha os dados de login <br> 2) Selecione como você deseja utilizar o aplicativo <br> 3) Clique no botão "Continuar".
+*Requisitos associados* | RF-007
+*Resultado esperado* | Prosseguir para a parte final do cadastro de usuario
+*Dados de entrada* | E-mail válido,usuário dentro do padrões, senha e confirmação de senha iguais
+*Resultado obtido* | Sucesso
+
+*Caso de Teste* | *CT06 - Criar conta parte 2*
+ :--------------: | ------------
+*Procedimento*  | 1) Preencha todos os campos referentes ao cadastro com dados válidos, e um arquivo png<br> 2) Clique no botão "Salvar" <br> 3) Realizar o login com o usuario e senha cadastrados <br> 
+*Requisitos associados* | RF-007
+*Resultado esperado* | Usuário cadastrado com sucesso
+*Dados de entrada* | Inserção de dados válidos no formulário de cadastro
+*Resultado obtido* | Sucesso
+
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
@@ -73,7 +89,12 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
 |Requisito Associado | RF-001	Permitir que o proprietário cadastre seu estabelecimento	|
-|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)| 
+|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)|
+
+|Caso de Teste                                 |*CT05/06 - Criar conta parte 1 e 2*                                       |
+|---|---|
+|Requisito Associado | RF-007 - Implementar um sistema de login/cadastro|
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/14UcfNU1zfUcln_-k5p1KXYn7GjYQoD8K/view?usp=drive_link |
 
 
 ## Avaliação dos Testes de Software
