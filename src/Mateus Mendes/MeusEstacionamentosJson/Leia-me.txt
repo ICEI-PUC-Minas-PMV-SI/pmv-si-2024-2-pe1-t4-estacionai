@@ -1,1 +1,4 @@
-
+de o comando npm install para criar a pasta dos modulos
+usei o vscode, no terminal do vscode na pasta raiz
+execute o comando node server/server.js
+quando tiver executando o servidor local bas acessar http://localhost:3000/ no navegador
