@@ -1,0 +1,132 @@
+{
+  "estacionamentos": [
+    {
+      "id": "1",
+      "nome": "Estacionamento Central",
+      "endereco": "Rua Exemplo, 123",
+      "funcionamento": "Parcial",
+      "horario_abertura": "08:00",
+      "horario_fechamento": "20:00",
+      "valor": [
+        {
+          "valor_tipo": "hora",
+          "valor": 15.67
+        },
+        {
+          "valor_tipo": "diaria",
+          "valor": null
+        },
+        {
+          "valor_tipo": "mensal",
+          "valor": null
+        }
+      ],
+      "vagas": [
+        {
+          "id": "1",
+          "idEstacionamento": "1",
+          "titulo": "Vaga 1",
+          "ocupado": 1,
+          "tamanho": 12
+        },
+        {
+          "id": "2",
+          "idEstacionamento": "1",
+          "titulo": "Vaga 2",
+          "ocupado": 0,
+          "tamanho": 12
+        },
+        {
+          "id": "3",
+          "idEstacionamento": "1",
+          "titulo": "Vaga 3",
+          "ocupado": 0,
+          "tamanho": 12
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Estacionamento Sul",
+      "endereco": "Avenida Sul, 456",
+      "funcionamento": "24H",
+      "horario_abertura": null,
+      "horario_fechamento": null,
+      "valor": [
+        {
+          "valor_tipo": "hora",
+          "valor": null
+        },
+        {
+          "valor_tipo": "diaria",
+          "valor": 20
+        },
+        {
+          "valor_tipo": "mensal",
+          "valor": null
+        }
+      ],
+      "vagas": [
+        {
+          "id": "4",
+          "idEstacionamento": "2",
+          "titulo": "Vaga 1",
+          "ocupado": 1,
+          "tamanho": 9
+        },
+        {
+          "id": "5",
+          "idEstacionamento": "2",
+          "titulo": "Vaga 2",
+          "ocupado": 0,
+          "tamanho": 9
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Estacionamento Premium",
+      "endereco": "Rua Premium, 789",
+      "funcionamento": "Parcial",
+      "horario_abertura": "06:00",
+      "horario_fechamento": "22:00",
+      "valor": [
+        {
+          "valor_tipo": "hora",
+          "valor": null
+        },
+        {
+          "valor_tipo": "diaria",
+          "valor": 25
+        },
+        {
+          "valor_tipo": "mensal",
+          "valor": 300
+        }
+      ],
+      "vagas": [
+        {
+          "id": "6",
+          "idEstacionamento": "3",
+          "titulo": "Vaga 1",
+          "ocupado": 1,
+          "tamanho": 12
+        },
+        {
+          "id": "7",
+          "idEstacionamento": "3",
+          "titulo": "Vaga 2",
+          "ocupado": 1,
+          "tamanho": 12
+        },
+        {
+          "id": "8",
+          "idEstacionamento": "3",
+          "titulo": "Vaga 3",
+          "ocupado": 0,
+          "tamanho": 18
+        }
+      ]
+    }
+  ]
+}

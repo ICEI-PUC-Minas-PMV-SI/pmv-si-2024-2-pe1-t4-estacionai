@@ -1,0 +1,182 @@
+/* Estilos Globais */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilos para o Cabeçalho */
+.navbar {
+  padding: 16px 112px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 104px;
+}
+
+.navbar-brand img {
+  width: 98px;
+  height: 72px;
+}
+
+/* Estilos para Títulos */
+h1 {
+  color: #0055a5;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  color: #0055a5;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Botões */
+.btn-primary {
+  border: 0;
+  border-radius: 8px;
+  background-color: #ed9e1d;
+  color: #3c3c3c;
+  margin-right: 10px; /* Adiciona espaçamento entre os botões */
+  }
+
+.btn-primary:last-child {
+  margin-right: 0; /* Remove a margem do último botão */
+  }
+
+.btn-primary:hover {
+  background-color: #d78a14;
+  color: #3c3c3c;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(237, 158, 29, 0.5);
+}
+
+.btn-aprov {
+  border: 0;
+  border-radius: 8px;
+  background-color: #0055a5;
+  color: #e7f1ff;
+}
+
+.btn-parking-list {
+  border: 2px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-parking-list:hover {
+  background-color: #e6f0ff;
+}
+
+
+/* Listas */
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #f0f0f0;
+}
+
+.list-group-item:hover {
+  background-color: #e7f1ff;
+}
+
+/* Pesquisa */
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input {
+  flex: 1;
+  height: 64px;
+  border-radius: 8px 0 0 8px;
+  border-right: 0;
+}
+
+.search-btn {
+  background-color: #ED9E1D;
+  color: rgb(0, 0, 0);
+  height: 64px;
+  border-radius: 0 8px 8px 0;
+  border-left: 0;
+  padding: 0 20px;
+  font-family: Roboto;
+  font-weight: 500;
+}
+
+.search-suggestions {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Estilos do Container Principal */
+main {
+  flex: 1;
+}
+
+.vagas-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 80px; 
+}
+
+
+.btn-custom {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-custom::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(237, 158, 29, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s, opacity 0.6s;
+  opacity: 0;
+}
+
+.btn-custom:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Estilo para indicar que a vaga está inativa */
+.vaga-inativa {
+  opacity: 0.6; /* Exemplo de efeito visual */
+}
+
+.list-group-item p {
+  margin-bottom: 0.25rem; /* Diminui o espaçamento entre as informações */
+}
+
+/* Adicione outros estilos personalizados aqui, se necessário */

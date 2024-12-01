@@ -1,0 +1,18 @@
+1-Quando abre a pagina tudo fica piscando por algun milesimos e depois não aparece mais informações do estacionametno
+    corrigido(eu acho)
+2-botão de adicionar estacionamento fica por baixo dos itens da lista
+    corrigido
+3-adicionar estacionamento ta adicionando coisas mescladas nos itens do banco de dados existente ao inves de em novos
+    corrigido
+4-excluir está excluindo somente item 1 no banco de dados ao inves do item selecionado
+    corrigido
+5-no modal de criar estacionamento sistema invertido de horarios, onde ao selecionar a opção 24h ele desbloqueia as caixas de texto de horarios
+    corrigido(esse foi facil)
+6-no modal de criar estacionamento o funcionamento quando colocado 24h como padrão as caixas de texto do horario de abertura e frachamento fica desbloqueadas
+    não vi necessidade de corriji, so coloquei o parcial como padrão de começo
+7-botões ficando no meio da lista colados no texto da esquerda
+    corrigido
+8-texto da esquerda na lista ficando com quebra de linha estranha
+    corrigido
+9-ao criar uma nova vaga criou umas 6 ou 7 vagas identicas ao invez de uma unica
+    que desgraça, como isso aconteceu????, não corrigido pois não consegui replicar o bug e não faço ideia doq causou isso

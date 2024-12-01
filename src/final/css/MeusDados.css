@@ -1,0 +1,170 @@
+body {
+    background-image: url(fundo-linhas.png);
+    height: 100%; 
+    margin: 0; ]
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    padding: 16px 112px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 104px;
+}
+  
+.navbar-brand img {
+    width: 98px;
+    height: 72px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px;
+    margin-bottom: 40px;
+}
+
+.profile-box {
+    background-color: #0055A5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    height: auto;
+    color: white;
+    display: flex;
+    margin-top: 100px;
+}
+
+.profile-picture {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    border-radius: 60%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-picture img { 
+    margin-top: 130px;
+    margin-left: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+    padding: 20px;
+}
+
+.profile-picture p {
+    margin-top: -10px;
+    margin-left: 50px;
+    font-size: 16px;
+}
+
+.profile-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    position: relative;
+    margin-left: 50px;
+    margin-top: -5px;
+    padding-right: 30px;
+}
+
+.profile-info h2 {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    margin-left: -150px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -15px;
+    width: 100%;
+}
+
+.input-group p {
+    flex-shrink: 0;
+    margin: 0;
+    text-align: left;
+    padding-right: 10px;
+    right: 200px;
+}
+
+.input-group input {
+    flex: 1;
+    margin-left: 50px;
+    padding: 8px;
+    margin-right: -100px;
+    border: none;
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    margin: 5px; 
+}
+
+.profile-info .btn-historico {
+    background-color: #ED9E1D;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px; 
+    position: absolute;
+    right: 30px;
+    bottom: auto;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+    margin-top: 20px;
+    padding-left: -600px;
+}
+
+.button-group .btn-edit-save {
+    background-color: #ED9E1D;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-info p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 5px 0; 
+}
+
+/* Estilizar o input de upload */
+input[type="file"] {
+    display: none; 
+}
+
+.upload-label {
+    display: inline-block;
+    background-color: #ED9E1D;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -10px;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-picture label{
+    margin-left: 26px;
+}

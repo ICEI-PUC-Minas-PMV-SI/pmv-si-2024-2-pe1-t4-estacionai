@@ -48,23 +48,6 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de um tempo correto para reservar a vaga
 **Resultado obtido** | Sucesso
 
-
-**Caso de Teste** | **CT01 - Criar conta parte 1**
- :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em criar conta <br> 2) Preencha todos os campos do formulário <br> 3) Clique no botão "Continuar".
-**Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
-
-**Caso de Teste** | **CT02 - Criar conta parte 2**
- :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Criar conta" <br> 
-**Requisitos associados** | RF-001
-**Resultado esperado** | Usuário cadastrado
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
-
 **Caso de Teste** | **CT04 – Dados de Usuário**
  :--------------: | ------------
 **Procedimento**  | 1) Clique em Meus Dados localizado na Navbar. <br> 2) Preencha os dados para salvar ou editar cadastro. <br> 3) Clique no botão "salvar" para salvar o cadastro.<br>4) Clique no botão "Editar" em caso de edição de cadastro.<br>5) Clique no botão "Histórico de Vagas" caso deseje visualizar o histórico das vagas.
@@ -73,11 +56,27 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inputs 'Nome de Usuário','nome','sobrenome','Modelo Veículo','Placa do Carro','Cor','CPF/CNPJ','Email','Senha','Logradouro com Nº','Telefone'
 **Resultado obtido** | "Dados enviados com sucesso!"
 
+*Caso de Teste* | *CT05 - Criar conta parte 1*
+ :--------------: | ------------
+*Procedimento*  | 1) Na pagina inicial home clique em criar conta <br> 2) Preencha os dados de login <br> 2) Selecione como você deseja utilizar o aplicativo <br> 3) Clique no botão "Continuar".
+*Requisitos associados* | RF-007
+*Resultado esperado* | Prosseguir para a parte final do cadastro de usuario
+*Dados de entrada* | E-mail válido,usuário dentro do padrões, senha e confirmação de senha iguais
+*Resultado obtido* | Sucesso
+
+*Caso de Teste* | *CT06 - Criar conta parte 2*
+ :--------------: | ------------
+*Procedimento*  | 1) Preencha todos os campos referentes ao cadastro com dados válidos, e um arquivo png<br> 2) Clique no botão "Salvar" <br> 3) Realizar o login com o usuario e senha cadastrados <br> 
+*Requisitos associados* | RF-007
+*Resultado esperado* | Usuário cadastrado com sucesso
+*Dados de entrada* | Inserção de dados válidos no formulário de cadastro
+*Resultado obtido* | Sucesso
+
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
-|*Caso de Teste*                                 |*CT01 - Histórico de vagas parte 1 e 2*                                         |
+|*Caso de Teste*                                 |*CT01/02 - Histórico de vagas parte 1 e 2*                                         |
 |---|---|
 |Requisito Associado | RF-014 - Exibir um histórico de reservas de vagas do usuário|
 |Link do vídeo do teste realizado: |https://www.loom.com/share/6432e64d67d441aab197e222d8377156| 
@@ -85,17 +84,17 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |*Caso de Teste*                                 |*CT03 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
 |Requisito Associado | RF-008 & RF-009 & RF-010 & RF-011 - Exibir, pesquisar e reservar uma vaga na Lista de Vagas|
-|Link do vídeo do teste realizado: |https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing| 
-
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
-|---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+|Link do vídeo do teste realizado: |https://drive.google.com/file/d/1DK64bS6_Vqgppe-PTCWr4Wy_bJ-Fio__/view?usp=sharing| 
 
 |*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
 |Requisito Associado | RF-001	Permitir que o proprietário cadastre seu estabelecimento	|
-|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)| 
+|Link do vídeo do teste realizado: |[https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing](https://we.tl/t-mtxD4wH4Jh)|
+
+|Caso de Teste                                 |*CT05/06 - Criar conta parte 1 e 2*                                       |
+|---|---|
+|Requisito Associado | RF-007 - Implementar um sistema de login/cadastro|
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/14UcfNU1zfUcln_-k5p1KXYn7GjYQoD8K/view?usp=drive_link |
 
 
 ## Avaliação dos Testes de Software
@@ -138,8 +137,7 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
 | 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
+| 2             | Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga |
 
 
 ## Registro de Testes de Usabilidade
@@ -158,37 +156,21 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 
 
 
-Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
+Cenário 2: Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
+| 1       | SIM             | 5                    | 15 segundos                  |
+| 2       | SIM             | 4.7                    | 20 segundos                  |
 |  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
+| **Média**     | 100%           | 4.85                | 17.5 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.5 segundos |
 
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+    Comentários dos usuários: 
+    1. Achei fácil e rápido fazer uma reserva de vaga
+    2. No geral bom, porém, senti uma falta da especificação mais visível com qual modelo de pagamento aquele estacionamento trabalha (Diária, Hora, Mensal...)
 
-
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
-
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 4                    | 36.21 segundos                          |
-|  |  |  |  |
-| **Média**     | 100%           | 4.67                | 30.05 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
-
-
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
 
 ## Avaliação dos Testes de Usabilidade
 
@@ -198,19 +180,6 @@ Os resultados mostraram que a aplicação web apresentou um bom desempenho, com 
 Além disso, os usuários demonstraram grande satisfação com a experiência, como evidenciado pelas médias de avaliação, que variaram entre 4 (bom) e 5 (ótimo). Esses números reforçam a qualidade da aplicação em termos de usabilidade e aceitação.
 
 Quanto ao tempo de execução dos cenários, foi constatada uma semelhança entre o tempo médio dos usuários e o do especialista/desenvolvedor. Essa proximidade sugere que o design da aplicação facilita a navegação e a execução das tarefas, minimizando a curva de aprendizado e garantindo uma interação intuitiva. Esses resultados destacam o potencial da aplicação para atender a um público amplo e diversificado.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
-
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo).
-
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
-
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
 
 

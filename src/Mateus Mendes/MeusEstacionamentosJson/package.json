@@ -1,0 +1,22 @@
+{
+  "name": "estacionai",
+  "version": "1.0.0",
+  "description": "Aluguel de Vagas Online",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "json-server": "json-server --watch server/db.json --port 3000"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "json-server": "^0.17.0",
+    "node-fetch": "^3.3.2",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "jason-server": "^3.0.0"
+  }
+}

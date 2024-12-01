@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Vagas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Seu CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <!-- Caminho corrigido para a imagem -->
+            <img src="../images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-primary fw-bold" href="minhas_vagas.html">Minhas Vagas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="meus_dados.html">Meus Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre_nos.html">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fale_conosco.html">Fale Conosco</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-person-circle" style="font-size: 1.5rem; color: #0055A5;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Conteúdo Principal -->
+<main class="container mt-5">
+    <h2 class="text-center text-primary">Estacionamentos</h2>
+    <div class="list-group" id="estacionamentoList">
+        <!-- Os estacionamentos serão inseridos aqui dinamicamente -->
+    </div>
+</main>
+<!-- Botões Fixos na Parte Inferior -->
+<div class="text-center" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1050;">
+    <!-- Botão Adicionar Estacionamento -->
+    <button class="btn btn-primary mb-3 d-block mx-auto" style="width: 250px;" onclick="openAddModal()">Adicionar Estacionamento</button>
+</div>
+<!-- Modal de Lista de Vagas -->
+<div class="modal fade" id="vagasModal" tabindex="-1" aria-labelledby="vagasModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="vagasModalLabel">Lista de Vagas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <div class="list-group" id="vagasModalList">
+                    <!-- As vagas serão carregadas dinamicamente aqui -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Criação de Vaga -->
+<div class="modal fade" id="createVagaModal" tabindex="-1" aria-labelledby="createVagaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createVagaModalLabel">Criar Vaga</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="createVagaForm">
+            <div class="mb-3">
+              <label for="vagaTitulo" class="form-label">Título da Vaga</label>
+              <input type="text" class="form-control" id="vagaTitulo" required>
+            </div>
+            <div class="mb-3">
+              <label for="vagaTamanho" class="form-label">Tamanho (m²)</label>
+              <!-- Campo de seleção para o tamanho da vaga (opções 9, 12 e 18) -->
+              <select class="form-control" id="vagaTamanho" required>
+                <option value="9">9 m²</option>
+                <option value="12">12 m²</option>
+                <option value="18">18 m²</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="vagaOcupado" class="form-label">Ocupada?</label>
+              <select class="form-control" id="vagaOcupado" required>
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+              </select>
+            </div>
+            <input type="hidden" id="vagaEstacionamentoId"> <!-- Campo oculto para armazenar o ID do estacionamento -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="saveVagaButton">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal de Confirmação de Exclusão -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza de que deseja excluir este estacionamento? Esta ação não pode ser desfeita.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmDeleteButton">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Adicionar Estacionamento -->
+<div class="modal fade" id="addEstacionamentoModal" tabindex="-1" aria-labelledby="addEstacionamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEstacionamentoModalLabel">Adicionar Estacionamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                    </div>
+                    <!-- Campo Funcionamento -->
+                    <div class="mb-3">
+                        <label for="funcionamento" class="form-label">Funcionamento</label>
+                        <select class="form-control" id="funcionamento" required>
+                            <option value="24H">24H</option>
+                            <option value="Parcial" selected>Parcial</option>
+                        </select>
+                    </div>
+                    <!-- Horário de Abertura e Fechamento -->
+                    <div class="mb-3" id="horarios" class="d-none">
+                        <label for="horario_abertura" class="form-label">Horário de Abertura</label>
+                        <input type="time" class="form-control" id="horario_abertura">
+                    </div>
+                    <div class="mb-3" id="horarios" class="d-none">
+                        <label for="horario_fechamento" class="form-label">Horário de Fechamento</label>
+                        <input type="time" class="form-control" id="horario_fechamento">
+                    </div>
+                    <!-- Campo de Preços -->
+                    <div class="mb-3">
+                        <label for="valor_hora" class="form-label">Valor por Hora</label>
+                        <div>
+                            <input type="checkbox" id="valor_hora" class="form-check-input" />
+                            <input type="number" class="form-control" id="valor_hora_input" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor_diaria" class="form-label">Valor Diário</label>
+                        <div>
+                            <input type="checkbox" id="valor_diaria" class="form-check-input" />
+                            <input type="number" class="form-control" id="valor_diaria_input" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor_mensal" class="form-label">Valor Mensal</label>
+                        <div>
+                            <input type="checkbox" id="valor_mensal" class="form-check-input" />
+                            <input type="number" class="form-control" id="valor_mensal_input" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="saveEstacionamentoButton">Salvar Estacionamento</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Editar Estacionamento -->
+<div class="modal fade" id="editEstacionamentoModal" tabindex="-1" aria-labelledby="editEstacionamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editEstacionamentoModalLabel">Editar Estacionamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="mb-3">
+                        <label for="editNome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="editNome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEndereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="editEndereco" required>
+                    </div>
+                    <!-- Campo Funcionamento -->
+                    <div class="mb-3">
+                        <label for="editFuncionamento" class="form-label">Funcionamento</label>
+                        <select class="form-control" id="editFuncionamento" required>
+                            <option value="24H">24H</option>
+                            <option value="Parcial">Parcial</option>
+                        </select>
+                    </div>
+                    <!-- Horário de Abertura e Fechamento -->
+                    <div class="mb-3">
+                        <label for="editHorarioAbertura" class="form-label">Horário de Abertura</label>
+                        <input type="time" class="form-control" id="editHorarioAbertura">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editHorarioFechamento" class="form-label">Horário de Fechamento</label>
+                        <input type="time" class="form-control" id="editHorarioFechamento">
+                    </div>
+                    <!-- Campo de Preços -->
+                    <div class="mb-3">
+                        <label for="editValorHora" class="form-label">Valor por Hora</label>
+                        <div>
+                            <input type="checkbox" id="editValorHora" class="form-check-input" />
+                            <input type="number" class="form-control" id="editValorHoraInput" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editValorDiaria" class="form-label">Valor Diário</label>
+                        <div>
+                            <input type="checkbox" id="editValorDiaria" class="form-check-input" />
+                            <input type="number" class="form-control" id="editValorDiariaInput" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editValorMensal" class="form-label">Valor Mensal</label>
+                        <div>
+                            <input type="checkbox" id="editValorMensal" class="form-check-input" />
+                            <input type="number" class="form-control" id="editValorMensalInput" placeholder="R$" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="updateEstacionamentoButton">Atualizar Estacionamento</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="container d-flex flex-wrap justify-content-between align-items-center py-2 my-4">
+    <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 EstacionAí, Inc</span>
+    </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-5">
+            <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-instagram"></i></a>
+            <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-facebook"></i></a>
+            <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-twitter"></i></a>
+        </li>
+    </ul>
+</footer>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {background-image: url(/src/images/fundo-linhas.png)}
+
+.btn-entrar{
+    background-color:#ED9E1D;
+    width:auto;
+    height:auto;
+    min-height:50px;
+    max-width:133px;
+    color: white;
+    margin-top:5%;
+}
+
+.form-class{
+    background-color:#0055a5;
+    width:400px;
+    height:480px;
+
+    border-radius: 15px;
+}
+.navbar {
+    padding: 16px 112px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 104px;
+}
+
+.logo{
+    max-height: 50px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+.logo-2{
+    width:auto;
+    height: auto;
+    max-width:150px;
+    max-height:150px;
+}
+
+.navbar-brand img {
+    width: 98px;
+    height: 72px;
+}

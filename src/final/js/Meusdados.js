@@ -2,7 +2,7 @@ const API_URL = "https://estacionai-bd.onrender.com/usuarios";
 
 // Redireciona para a página históricovagas
 document.querySelector(".btn-historico").addEventListener("click", function () {
-    window.location.href = "/src/RaquelRibeiroHistoricodeVagas/historicovagas.html";
+    window.location.href = "/src/final/historicovagas.html";
 });
 
 
