@@ -86,9 +86,9 @@ function renderReservations() {
         const estacionamento = estacionamentos.find(e => e.id === reservation.idEstacionamento);
         const estacionamentoNome = estacionamento ? estacionamento.nome : 'Estacionamento Desconhecido';
 
-        // Formata a data e o horário, garantindo que os campos existam
-        const dataReserva = reservation.data ? formatDate(reservation.data) : 'Data não informada';
-        const horarioReserva = reservation.horario || 'Horário não informado';
+        // Formata a data e o horário, usando a data e hora atuais se não estiverem presentes
+        const dataReserva = reservation.data ? formatDate(reservation.data) : formatCurrentDateBrasilia();
+        const horarioReserva = reservation.horario ? reservation.horario : formatCurrentTimeBrasilia();
 
         // Log para depuração
         console.log('Processando reserva:', reservation);
@@ -116,10 +116,24 @@ function renderReservations() {
 // Função para formatar a data
 function formatDate(dateString) {
     if (!dateString) return 'Data não informada';
-    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'America/Sao_Paulo' };
     const date = new Date(dateString);
     if (isNaN(date)) return 'Data inválida';
     return date.toLocaleDateString('pt-BR', options);
+}
+
+// Função para obter a data atual no fuso horário de Brasília
+function formatCurrentDateBrasilia() {
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'America/Sao_Paulo' };
+    const now = new Date();
+    return new Intl.DateTimeFormat('pt-BR', options).format(now);
+}
+
+// Função para obter o horário atual no fuso horário de Brasília
+function formatCurrentTimeBrasilia() {
+    const options = { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' };
+    const now = new Date();
+    return new Intl.DateTimeFormat('pt-BR', options).format(now);
 }
 
 // Carrega as reservas ao carregar a página
@@ -128,18 +142,22 @@ document.addEventListener('DOMContentLoaded', fetchReservations);
 // Função para abrir o modal de confirmação
 function openConfirmModal(reservationId) {
     document.getElementById('reservationId').value = reservationId;
-    populateVagaSelect();
+    populateVagaSelect(reservationId);
     const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
     confirmModal.show();
 }
 
 // Função para popular o select de vagas disponíveis
-function populateVagaSelect() {
+function populateVagaSelect(reservationId) {
     const vagaSelect = document.getElementById('vagaSelect');
     vagaSelect.innerHTML = '<option value="" disabled selected>Escolha uma opção...</option>';
 
-    // Filtrar vagas não ocupadas
-    const vagasDisponiveis = vagas.filter(v => v.ocupado == 0);
+    // Encontra a reserva atual
+    const reservation = reservations.find(r => r.id === reservationId);
+    if (!reservation) return;
+
+    // Filtrar vagas não ocupadas e do estacionamento correspondente
+    const vagasDisponiveis = vagas.filter(v => v.ocupado == 0 && v.idEstacionamento === reservation.idEstacionamento);
 
     vagasDisponiveis.forEach(vaga => {
         const option = document.createElement('option');
@@ -181,19 +199,25 @@ document.getElementById('vagaForm').addEventListener('submit', async function(ev
             }
         }
 
+        // Encontra o estacionamento associado à reserva
+        const estacionamento = estacionamentos.find(e => e.id === reservation.idEstacionamento);
+
+        // Encontra o usuário associado à reserva
+        const user = users.find(u => u.id === reservation.idUsuario);
+
         // Prepara os dados da reserva atualizada
         const updatedReservation = {
-            ...reservation,
-            status: 'aprovado',
-            vaga: vaga ? vaga.titulo : 'Vaga não especificada',
-            idReserva: reservation.id, // Adiciona idReserva conforme a estrutura
-            data: reservation.data || new Date().toISOString().split('T')[0],
-            horario: reservation.horario || 'Horário não informado',
-            valor: reservation.valor || 0,
+            idReserva: reservation.id,
+            idUsuario: reservation.idUsuario,
+            data: reservation.data || formatCurrentDateBrasilia(),
             local: estacionamento ? estacionamento.nome : 'Local não especificado',
             veiculo: reservation.veiculo || 'Veículo não especificado',
             placa: reservation.placa || 'Placa não especificada',
-            locador: user ? user.nome : 'Locador não especificado'
+            horario: reservation.horario || `${formatCurrentTimeBrasilia()} - ${formatCurrentTimeBrasilia()}`,
+            valor: reservation.valor || 0,
+            vaga: vaga ? vaga.titulo : 'Vaga não especificada',
+            locador: user ? user.nome : 'Locador não especificado',
+            status: 'aprovado'
         };
 
         try {
@@ -255,18 +279,25 @@ async function rejectReservation(reservationId) {
             return;
         }
 
+        // Encontra o estacionamento associado à reserva
+        const estacionamento = estacionamentos.find(e => e.id === reservation.idEstacionamento);
+
+        // Encontra o usuário associado à reserva
+        const user = users.find(u => u.id === reservation.idUsuario);
+
         // Prepara os dados da reserva atualizada
         const updatedReservation = {
-            ...reservation,
-            status: 'recusado',
-            idReserva: reservation.id, // Adiciona idReserva conforme a estrutura
-            data: reservation.data || new Date().toISOString().split('T')[0],
-            horario: reservation.horario || 'Horário não informado',
-            valor: reservation.valor || 0,
+            idReserva: reservation.id,
+            idUsuario: reservation.idUsuario,
+            data: reservation.data || formatCurrentDateBrasilia(),
             local: estacionamento ? estacionamento.nome : 'Local não especificado',
             veiculo: reservation.veiculo || 'Veículo não especificado',
             placa: reservation.placa || 'Placa não especificada',
-            locador: user ? user.nome : 'Locador não especificado'
+            horario: reservation.horario || `${formatCurrentTimeBrasilia()} - ${formatCurrentTimeBrasilia()}`,
+            valor: reservation.valor || 0,
+            vaga: 'Vaga não especificada',
+            locador: user ? user.nome : 'Locador não especificado',
+            status: 'recusado'
         };
 
         try {
@@ -338,8 +369,8 @@ function calculateHours(horario) {
     const [inicio, fim] = horario.split(' - ');
     if (!inicio || !fim) return 0;
 
-    const [startHour, startMinute] = inicio.replace('hs', '').split(':').map(Number);
-    const [endHour, endMinute] = fim.replace('hs', '').split(':').map(Number);
+    const [startHour, startMinute] = inicio.split(':').map(Number);
+    const [endHour, endMinute] = fim.split(':').map(Number);
 
     if (isNaN(startHour) || isNaN(startMinute) || isNaN(endHour) || isNaN(endMinute)) return 0;
 
