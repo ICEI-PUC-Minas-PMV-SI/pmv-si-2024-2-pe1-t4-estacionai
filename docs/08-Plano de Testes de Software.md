@@ -84,7 +84,7 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |*Caso de Teste*                                 |*CT03 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
 |Requisito Associado | RF-008 & RF-009 & RF-010 & RF-011 - Exibir, pesquisar e reservar uma vaga na Lista de Vagas|
-|Link do vídeo do teste realizado: |https://drive.google.com/file/d/1qpYV8tpmx3HT4chFn6MEKJpewtSVUD5C/view?usp=sharing| 
+|Link do vídeo do teste realizado: |https://drive.google.com/file/d/1DK64bS6_Vqgppe-PTCWr4Wy_bJ-Fio__/view?usp=sharing| 
 
 |*Caso de Teste*                                 |*CT04 - Fazer uma reserva na tela de Lista de Vagas*                                         |
 |---|---|
