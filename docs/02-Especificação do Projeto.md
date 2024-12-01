@@ -19,7 +19,6 @@ Cancelar reservas com antecedência mínima;
 Receber notificações de status de reserva. 
 
 #### Requisitos não funcionais:
-API de geolocalização (Google Places) para localização de vagas;
 HTML, CSS, JavaScript para interface e interação do usuário;
 JSON-Server para gestão de dados;
 Funcionalidade em dispositivos móveis e navegadores principais.
@@ -104,12 +103,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| O site deve ser responsivo para rodar em um dispositivos móvel | ALTA |
 |RNF-002| A interface do usuário deve ser intuitiva e fácil de usar | ALTA |
 |RNF-003| O banco de dados utilizado deve ser JSON-Server | ALTA |
-|RNF-004| Para o serviço de geolocalização deve ser usada a API Places do Google | ALTA |
-|RNF-005| Aplicação deve ser desenvolvida em HTML, CSS e Javascript | ALTA |
-|RNF-006| As senhas de todos os usuários devem ser criptografadas com crypto-js | ALTA |
-|RNF-007| Escalabilidade, o sistema deve ser capaz de lidar com um grande número de usuários simultâneos sem afetar o desempenho |MÉDIA|
-|RNF-008| Compatibilidade com os principais navegadores (Chrome, Firefox, Safari, Edge)|ALTA|
-|RNF-009| Conformidade com Lei Geral de Proteção de Dados garantindo o consentimento dos usuários para coleta de dados e oferecendo a opção de remover seus dados do sistema |ALTA|
+|RNF-004| Aplicação deve ser desenvolvida em HTML, CSS e Javascript | ALTA |
+|RNF-005| As senhas de todos os usuários devem ser criptografadas com crypto-js | ALTA |
+|RNF-006| Escalabilidade, o sistema deve ser capaz de lidar com um grande número de usuários simultâneos sem afetar o desempenho |MÉDIA|
+|RNF-007| Compatibilidade com os principais navegadores (Chrome, Firefox, Safari, Edge)|ALTA|
+|RNF-008| Conformidade com Lei Geral de Proteção de Dados garantindo o consentimento dos usuários para coleta de dados e oferecendo a opção de remover seus dados do sistema |ALTA|
 
 
 ## Restrições

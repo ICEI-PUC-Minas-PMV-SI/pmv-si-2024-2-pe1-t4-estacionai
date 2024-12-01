@@ -20,6 +20,11 @@ const displaySuggestions = (estacionamentos) => {
         const li = document.createElement("li");
         li.classList.add("list-group-item", "w-100");
         li.textContent = estacionamento.nome;
+
+        li.addEventListener("click", () => {
+            window.location.href = `/src/matheus-bon/busca-vagas.html`;
+        });
+
         suggestionsList.appendChild(li);
     });
 
