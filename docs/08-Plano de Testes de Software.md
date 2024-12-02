@@ -72,6 +72,22 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 *Dados de entrada* | Inserção de dados válidos no formulário de cadastro
 *Resultado obtido* | Sucesso
 
+**Caso de Teste** | **CT07 - Administrador aprova uma reserva pendente**
+:--------------: | ------------
+**Procedimento**  | 1) Acesse a página de aprovação de vagas (`aprovacao.html`). <br> 2) Visualize a lista de reservas pendentes. <br> 3) Clique no botão "Aprovar" para uma reserva pendente. <br> 4) No modal que se abre, selecione uma vaga disponível. <br> 5) Confirme a aprovação.
+**Requisitos associados** | RF-012 - Aprovar reservas pendentes de usuários.
+**Resultado esperado** | A reserva é aprovada, a vaga selecionada é marcada como ocupada, e a reserva é movida para o histórico com status "aprovado".
+**Dados de entrada** | Seleção de uma vaga disponível.
+**Resultado obtido** | Sucesso.
+
+**Caso de Teste** | **CT08 - Administrador recusa uma reserva pendente**
+:--------------: | ------------
+**Procedimento**  | 1) Acesse a página de aprovação de vagas (`aprovacao.html`). <br> 2) Visualize a lista de reservas pendentes. <br> 3) Clique no botão "Recusar" para uma reserva pendente. <br> 4) Confirme a recusa na caixa de diálogo.
+**Requisitos associados** | RF-013 - Recusar reservas pendentes de usuários.
+**Resultado esperado** | A reserva é removida das pendentes e movida para o histórico com status "recusado".
+**Dados de entrada** | Confirmação da recusa.
+**Resultado obtido** | Sucesso.
+
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
@@ -95,6 +111,16 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |---|---|
 |Requisito Associado | RF-007 - Implementar um sistema de login/cadastro|
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/14UcfNU1zfUcln_-k5p1KXYn7GjYQoD8K/view?usp=drive_link |
+
+| *Caso de Teste* | **CT07 - Aprovar uma reserva pendente** |
+|---|---|
+|Requisito Associado| RF-012 - Administrador aprova uma reserva pendente |
+| Link do vídeo do teste realizado: | https://drive.google.com/file/d/1n-_LsBS54AUQb7g0nG5-qGq8Ei4uJs9w/view?usp=sharing |
+
+| *Caso de Teste* | **CT08 - Administrador recusa uma reserva pendente** |
+|---|---|
+|Requisito Associado| RF-013 - Recusar reservas pendentes de usuários |
+| Link do vídeo do teste realizado: | https://drive.google.com/file/d/1B86YSLyWYGAS8ip1rhtJpaBIJbgsWxNX/view?usp=sharing |
 
 
 ## Avaliação dos Testes de Software
