@@ -15,7 +15,9 @@ document.getElementById("saveButton").addEventListener("click", function (event)
     const nomeUsuario = document.querySelector("input[placeholder='Nome de Usuário']").value;
     const nome = document.querySelector("input[placeholder='nome']").value;
     const sobrenome = document.querySelector("input[placeholder='sobrenome']").value;
-    const NomedaVaga_Estacionamento = document.querySelector("input[placeholder='Nome da Vaga/Estacionamento']").value;
+    const modeloVeiculo = document.querySelector("input[placeholder='Modelo Veículo']").value;
+    const placadocarro = document.querySelector("input[placeholder='Placa do Carro']").value;
+    const cor = document.querySelector("input[placeholder='Cor']").value;
     const cpfCnpj = document.querySelector("input[placeholder='CPF/CNPJ']").value;
     const email = document.querySelector("input[placeholder='Email']").value;
     const senha = document.querySelector("input[placeholder='Senha']").value;

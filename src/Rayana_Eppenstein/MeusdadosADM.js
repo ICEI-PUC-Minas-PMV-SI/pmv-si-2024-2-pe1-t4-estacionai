@@ -31,15 +31,10 @@ document.getElementById("saveButton").addEventListener("click", function (event)
         cpfCnpj: cpfCnpj,
         senha: senha,
         telefone: telefone,
-        endereco: {
+        NomedaVagaEstacionamento: {
             logradouro: logradouro,
             cep: cep
         },
-        veiculo: {
-            modelo: modeloVeiculo,
-            placa: placa,
-            cor: cor
-        }
     };
 
     // Envia os dados para o servidor usando a API fetch
