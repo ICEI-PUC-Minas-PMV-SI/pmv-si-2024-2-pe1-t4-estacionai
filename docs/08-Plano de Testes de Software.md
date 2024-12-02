@@ -176,13 +176,13 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 | **Tempo para conclusão pelo especialista** | SIM | 5 | 12.50 segundos |
 
 
-
-**Comentário do usuário:** Achei fácil acessar as informações e não tive dificuldade em conclui-las.
-
-
+**Comentário do usuário:** 
+Achei fácil acessar as informações e não tive dificuldade em conclui-las.
 
 
-Cenário 2: Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga
+
+
+**Cenário 2:** Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
@@ -193,9 +193,9 @@ Cenário 2: Um motorista que deseja encontrar um estacionamento/vaga para estaci
 | **Tempo para conclusão pelo especialista** | SIM | 5 | 8.5 segundos |
 
 
-    Comentários dos usuários: 
-    1. Achei fácil e rápido fazer uma reserva de vaga
-    2. No geral bom, porém, senti uma falta da especificação mais visível com qual modelo de pagamento aquele estacionamento trabalha (Diária, Hora, Mensal...)
+ **Comentário do usuário:** 
+1. Achei fácil e rápido fazer uma reserva de vaga
+2. No geral bom, porém, senti uma falta da especificação mais visível com qual modelo de pagamento aquele estacionamento trabalha (Diária, Hora, Mensal...)
 
 
 ## Avaliação dos Testes de Usabilidade
