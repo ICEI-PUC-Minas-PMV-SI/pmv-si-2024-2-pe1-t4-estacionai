@@ -164,7 +164,7 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 |---------------|----------------------|
 | 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
 | 2             | Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga |
-
+| 3             | Usuário Motrista cadastrado que deseja encontrar editar seus dados cadastrais na plataforma para uso mensal da plataforma. |
 
 ## Registro de Testes de Usabilidade
 
@@ -198,9 +198,22 @@ Achei fácil acessar as informações e não tive dificuldade em conclui-las.
 2. No geral bom, porém, senti uma falta da especificação mais visível com qual modelo de pagamento aquele estacionamento trabalha (Diária, Hora, Mensal...)
 
 
+**Cenário 3:** Usuário Motrista cadastrado que deseja encontrar editar seus dados cadastrais na plataforma para uso mensal da plataforma.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 4                    | 00:01:30                   |
+| 2       | SIM             | 4                  | 00:02:10                   |
+|  |  |  |  |
+| **Média**     | 90%           | 4.0                | 00:01:35                    |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 00:01:10 |
 ## Avaliação dos Testes de Usabilidade
 
+**Comentário do usuário:** 
+1. Achei fácil, mas fique confusa onde apertar na hora de salvar meus dados, pois havia uma mensagem no final com um botão de "ok" que apareceu mais de uma vez.
+2. Achei fácil, levei mais tempo procurando a foto que usaria no perfil.
 
+   
 Os resultados mostraram que a aplicação web apresentou um bom desempenho, com alta taxa de sucesso na conclusão dos cenários propostos. Todos os objetivos foram alcançados de forma eficiente, indicando que a interface é funcional e atende às necessidades dos usuários.
 
 Além disso, os usuários demonstraram grande satisfação com a experiência, como evidenciado pelas médias de avaliação, que variaram entre 4 (bom) e 5 (ótimo). Esses números reforçam a qualidade da aplicação em termos de usabilidade e aceitação.
