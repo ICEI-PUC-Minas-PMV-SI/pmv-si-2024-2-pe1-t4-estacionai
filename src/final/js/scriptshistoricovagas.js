@@ -20,9 +20,6 @@ async function submitSearch() {
 
     try {
 
-        //popularBancoHistorico();
-        //apagarBancoHistorico();
-
         // https://estacionai-bd.onrender.com/historico_reservas?idUsuario=2584&veiculo=Corolla
 
 
@@ -148,165 +145,21 @@ function showSearchForm() {
     document.getElementById("historySection").style.display = "none";
 }
 
-const receiptFixedData = [{
-    id: "1",
-    idUsuario: "2584",
-    data: new Date("2024/09/28"),
-    local: "Estacionamento Esperança",
-    veiculo: "Corolla",
-    placa: "HPP-2031",
-    horario: "08:35hs - 09:35hs",
-    valor: 20.00,
-    vaga: "Vaga A",
-    locador: "Carlos Silva"
-},
-{
-    id: "2",
-    idUsuario: "2584",
-    data: new Date("2024/07/28"),
-    local: "Estacionamento Esperança",
-    veiculo: "HRV",
-    placa: "HPC-1530",
-    horario: "08:35hs - 09:35hs",
-    valor: 25.00,
-    vaga: "Vaga B",
-    locador: "Pedro Paulo"
-},
-{
-    id: "3",
-    idUsuario: "1452",
-    data: new Date("2024/10/15"),
-    local: "Estacionamento Central",
-    veiculo: "Civic",
-    placa: "ABC-1234",
-    horario: "12:00hs - 13:00hs",
-    valor: 27.00,
-    vaga: "Vaga C",
-    locador: "José Almeida"
-},
-{
-    id: "4",
-    idUsuario: "3689",
-    data: new Date("2024/11/01"),
-    local: "Estacionamento da Praia",
-    veiculo: "Fiesta",
-    placa: "KLM-5678",
-    horario: "09:00hs - 10:30hs",
-    valor: 17.00,
-    vaga: "Vaga D",
-    locador: "Maria Souza"
-},
-{
-    id: "5",
-    idUsuario: "9876",
-    data: new Date("2024/08/20"),
-    local: "Shopping Norte",
-    veiculo: "EcoSport",
-    placa: "XYZ-4321",
-    horario: "14:30hs - 16:00hs",
-    valor: 23.00,
-    vaga: "Vaga E",
-    locador: "Luiz Fernando"
-},
-{
-    id: "6",
-    idUsuario: "2345",
-    data: new Date("2024/12/05"),
-    local: "Aeroporto Internacional",
-    veiculo: "Hilux",
-    placa: "QWE-7654",
-    horario: "06:45hs - 08:15hs",
-    valor: 22.00,
-    vaga: "Vaga F",
-    locador: "Fernanda Ribeiro"
-},
-{
-    id: "7",
-    idUsuario: "5637",
-    data: new Date("2024/09/20"),
-    local: "Estacionamento Esperança",
-    veiculo: "Onix",
-    placa: "RTY-6789",
-    horario: "10:00hs - 11:30hs",
-    valor: 24.00,
-    vaga: "Vaga G",
-    locador: "Ricardo Lima"
-},
-{
-    id: "8",
-    idUsuario: "8721",
-    data: new Date("2024/06/17"),
-    local: "Estacionamento da Universidade",
-    veiculo: "Corsa",
-    placa: "UIO-3456",
-    horario: "08:00hs - 09:30hs",
-    valor: 18.00,
-    vaga: "Vaga H",
-    locador: "Ana Clara"
-},
-{
-    id: "9",
-    idUsuario: "1452",
-    data: new Date("2024/05/10"),
-    local: "Centro Empresarial",
-    veiculo: "Golf",
-    placa: "QAZ-1122",
-    horario: "07:00hs - 08:00hs",
-    valor: 17.00,
-    vaga: "Vaga I",
-    locador: "Bruno Costa"
-},
-{
-    id: "10",
-    idUsuario: "2584",
-    data: new Date("2024/03/22"),
-    local: "Estacionamento Esperança",
-    veiculo: "HB20",
-    placa: "OPL-9934",
-    horario: "15:30hs - 17:00hs",
-    valor: 29.00,
-    vaga: "Vaga J",
-    locador: "Paula Marques"
-}];
+document.addEventListener("DOMContentLoaded", function () {
+    const idUser = localStorage.getItem("userId");
+    const cargo = localStorage.getItem("cargo");
+    const meusDadosItem = document.getElementById("meusDadosItem");
+    const minhasVagas = document.getElementById("minhasVagas");
+    const cadastraLoginLi = document.getElementById("cadastra-login-li");
+    const profile = document.getElementById("profile");
 
-// Função para popular o banco de dados
-async function popularBancoHistorico() {
-    for (const vaga of receiptFixedData) {
-        const options = {
-            method: "POST",
-            header: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(vaga)
-        }
-
-        const res = await fetch(API_URL, options);
-
-        if (!res.ok) {
-            console.log('error')
-            continue;
-        }
-
-        console.log(vaga);
+    if (idUser) {
+        meusDadosItem.style.display = "block";
+        cadastraLoginLi.style.display = "none";
+        profile.style.display = "block";
     }
-}
 
-// Função para excluir os dados do banco de dados referente ao dados de receiptFixedData
-async function apagarBancoHistorico() {
-    for (const vaga of receiptFixedData) {
-        const options = {
-            method: "DELETE",
-        }
-
-        const url = API_URL + `/${vaga.id}`
-        const res = await fetch(url, options);
-
-        if (!res.ok) {
-            console.log('error')
-            continue;
-        }
-
-        console.log('Banco de dados apagado!');
+    if(cargo === 'admin') {
+        minhasVagas.style.display = "block";
     }
-}
-
+});

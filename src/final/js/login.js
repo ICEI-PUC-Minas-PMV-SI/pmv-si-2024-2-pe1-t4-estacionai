@@ -22,16 +22,20 @@ function buscar() {
     .then(usuarios => {
       // Verifica se há correspondência de usuário e senha
       const usuarioEncontrado = usuarios.find(
-        u => u.user === user && u.senha === senha
+        u => u.nome === user && u.senha === senha
       );
 
       if (usuarioEncontrado) {
         const userId = usuarioEncontrado.id; // Aqui você recupera o ID do usuário
+        const cargo = usuarioEncontrado.cargo; // Aqui você recupera o ID do usuário
         alert(`Login bem-sucedido! Bem-vindo, ${user}`);
 
         //ARMAZENAMENTO DA VARIAVEL NO LOCAL STORAGE
-         localStorage.setItem('userId', userId);
-       
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('cargo', cargo);
+
+        window.location.href = "./home.html";
+
       } else {
         alert("Usuário ou senha incorretos!");
       }
