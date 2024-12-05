@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputs = document.querySelectorAll(".profile-info input");
     const uploadFoto = document.getElementById("uploadFoto");
     const profilePicture = document.querySelector(".profile-picture img");
-    const idUsuario = localStorage.getItem("idUsuario");
+    const idUsuario = localStorage.getItem("userId");
 
     fetch(`${API_URL}/${idUsuario}`, {
         method: "GET",

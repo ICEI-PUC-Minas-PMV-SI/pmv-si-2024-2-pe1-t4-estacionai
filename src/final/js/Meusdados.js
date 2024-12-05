@@ -2,7 +2,7 @@ const API_URL = "https://estacionai-bd.onrender.com/usuarios";
 
 // Redireciona para a página históricovagas
 document.querySelector(".btn-historico").addEventListener("click", function () {
-    window.location.href = "/src/final/historicovagas.html";
+    window.location.href = "./historico-vagas.html";
 });
 
 
@@ -23,8 +23,8 @@ document.getElementById("saveButton").addEventListener("click", function (event)
     const senha = document.querySelector("input[placeholder='Senha']").value;
     const logradouro = document.querySelector("input[placeholder='Logradouro com Nº']").value;
     const telefone = document.querySelector("input[placeholder='Telefone']").value;
-    
-    
+
+
 
     // Cria um objeto com os dados capturados
     const dadosUsuario = {
@@ -71,12 +71,30 @@ document.getElementById("saveButton").addEventListener("click", function (event)
 
 // Habilita e desabilita os campos de entrada no modo de edição
 document.addEventListener("DOMContentLoaded", function () {
+
+    const idUser = localStorage.getItem("userId");
+    const meusDadosItem = document.getElementById("meusDadosItem");
+    const cadastraLoginLi = document.getElementById("cadastra-login-li");
+    const profile = document.getElementById("profile");
+
+    const cargo = localStorage.getItem("cargo");
+    const minhasVagas = document.getElementById("minhasVagas");
+
+    if (cargo === 'admin') {
+        minhasVagas.style.display = "block";
+    }
+
+    if (idUser) {
+        meusDadosItem.style.display = "block";
+        cadastraLoginLi.style.display = "none";
+        profile.style.display = "block";
+    }
+
     const editButton = document.querySelector(".btn-edit-save:nth-child(1)");
     const saveButton = document.querySelector(".btn-edit-save:nth-child(2)");
     const inputs = document.querySelectorAll(".profile-info input");
     const uploadFoto = document.getElementById("uploadFoto");
     const profilePicture = document.querySelector(".profile-picture img");
-    const idUsuario = localStorage.getItem("idUsuario");
 
     fetch(`${API_URL}/${idUsuario}`, {
         method: "GET",
@@ -88,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nomeUsuario = user.user;
         const inputNomeUsuario = document.getElementById("nome-usuario")
         inputNomeUsuario.value = nomeUsuario
-        
+
     })
 
 
@@ -134,3 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const logout = () => {
+    localStorage.clear();
+
+    window.location.href = "./login.html"
+}

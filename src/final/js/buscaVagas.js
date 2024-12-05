@@ -152,5 +152,19 @@ const startUpdatingEstacionamentos = async () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    const idUser = localStorage.getItem("userId");
+    const meusDadosItem = document.getElementById("meusDadosItem");
+
+    const cargo = localStorage.getItem("cargo");
+    const minhasVagas = document.getElementById("minhasVagas");
+
+    if (cargo === 'admin') {
+        minhasVagas.style.display = "block";
+    }
+
+    if (idUser) {
+        meusDadosItem.style.display = "block";
+    }
+
     startUpdatingEstacionamentos();
 });

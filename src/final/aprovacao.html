@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Metadados essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas a Serem Aprovadas</title>
+    <!-- Inclusão do Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Inclusão dos ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Link para CSS personalizado -->
+    <link rel="stylesheet" href="css/style-home.css">
+    <style>
+        /* Estilos para estruturar o layout flexível */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            /* Estilos do footer */
+        }
+
+        .btn-aprov {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-aprov:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <img src="../images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item" id="meusDadosItem" style="display: none;">
+                        <a class="nav-link" href="meus-dados.html">Meus Dados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contatenos.html">Fale Conosco</a>
+                    </li>
+                    <li class="nav-item ms-3" id="cadastra-login-li" style="display: block;">
+                        <div class="ml-auto">
+                            <a class="btn btn-outline-secondary" role="button" href="cadastro-incial.html">Criar
+                                conta</a>
+                            <a class="btn btn-warning" href="login.html" role="button">Entrar</a>
+                    </li>
+                    <li class="nav-item ms-3" id="profile" style="display: none;">
+                        <a href="meus-dados.html" class="nav-link">
+                            <i class="bi bi-person-circle" style="font-size: 1.5rem; color: #0055A5;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-5">
+        <h2 class="text-center mb-4 text-primary">Vagas a Serem Aprovadas</h2>
+        <!-- Lista de reservas pendentes -->
+        <div class="list-group" id="reservationsList">
+            <!-- As reservas serão carregadas dinamicamente pelo JavaScript -->
+        </div>
+
+        <!-- Modal para Confirmação -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Formulário para seleção da vaga -->
+                    <form id="vagaForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmModalLabel">Em qual vaga ele irá ficar?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="vagaSelect" class="form-label">Selecione a vaga</label>
+                                <select class="form-select" id="vagaSelect" required>
+                                    <option value="" disabled selected>Escolha uma opção...</option>
+                                    <!-- As opções serão carregadas dinamicamente -->
+                                </select>
+                                <!-- Mensagem de feedback para validação -->
+                                <div class="invalid-feedback">
+                                    Por favor, selecione uma vaga.
+                                </div>
+                            </div>
+                            <!-- Campo oculto para armazenar o ID da reserva -->
+                            <input type="hidden" id="reservationId">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-aprov">Confirmar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Confirmação de Reserva -->
+        <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="border-radius: 15px;">
+                    <div class="modal-header justify-content-center" style="border-bottom: none;">
+                        <div class="text-center">
+                            <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: #4CAF50;"></i>
+                            <h5 class="modal-title mt-2" id="reservationModalLabel">Reserva Confirmada!</h5>
+                            <h3 class="text-center mt-2" style="color: #333;" id="reservationAmount">R$0,00</h3>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <hr>
+                        <!-- Detalhes da reserva confirmada -->
+                        <ul class="list-unstyled" id="reservationDetails">
+                            <!-- Os detalhes serão inseridos dinamicamente -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container d-flex flex-wrap justify-content-between align-items-center py-2 my-4">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 EstacionAí, Inc</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-5">
+                <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-instagram"></i></a>
+                <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-facebook"></i></a>
+                <a class="text-body-secondary rs fs-5 mx-1" href="#"><i class="bi bi-twitter"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Incluindo o arquivo JavaScript externo -->
+    <script src="js/aprovacao.js"></script>
+</body>
+
+</html>
