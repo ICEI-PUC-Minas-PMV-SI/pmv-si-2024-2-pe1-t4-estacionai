@@ -88,6 +88,14 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Confirmação da recusa.
 **Resultado obtido** | Sucesso.
 
+**Caso de Teste** | **CT09 - Proprietario Gerencia Seus Estacionamento**
+:--------------: | ------------
+**Procedimento**  | 1) Acesse a página Meus Estacionamentos. <br> 2) Visualize a Pagina Meus Estacionamento Monstrando um Lista de Estacionamentos Possuidos. <br> 3) Clique no botão "Adicionar Novo Estacionamento" para Iniciar Novo Registro. <br> 4) Preencha os Dados <br> 5) Salve Alerações <br> 6) Adicione Novas Vagas <br> 7) Edite as Informações
+**Requisitos associados** | RF-001, RF-002, RF-003
+**Resultado esperado** | Um Novo Registro de Estacionamento é Feito.
+**Dados de entrada** | Registro e Edição de Novo Estacionamento.
+**Resultado obtido** | Sucesso.
+
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
@@ -122,6 +130,10 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |Requisito Associado| RF-013 - Recusar reservas pendentes de usuários |
 | Link do vídeo do teste realizado: | https://drive.google.com/file/d/1B86YSLyWYGAS8ip1rhtJpaBIJbgsWxNX/view?usp=sharing |
 
+|*Caso de Teste*                                 |*CT09 - Registro de Estacionamento*                                         |
+|---|---|
+|Requisito Associado | RF-001, RF-002, RF-003|
+|Link do vídeo do teste realizado: |https://drive.google.com/drive/folders/1wnrWX8ZetSGqO69qCVnC1ovAn0x_Ndsv?usp=sharing| 
 
 ## Avaliação dos Testes de Software
 
