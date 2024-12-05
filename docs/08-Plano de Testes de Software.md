@@ -207,12 +207,14 @@ Achei fácil acessar as informações e não tive dificuldade em conclui-las.
 |  |  |  |  |
 | **Média**     | 90%           | 4.0                | 00:01:35                    |
 | **Tempo para conclusão pelo especialista** | SIM | 5 | 00:01:10 |
-## Avaliação dos Testes de Usabilidade
+
 
 **Comentário do usuário:** 
 1. Achei fácil, mas fique confusa onde apertar na hora de salvar meus dados, pois havia uma mensagem no final com um botão de "ok" que apareceu mais de uma vez.
 2. Achei fácil, levei mais tempo procurando a foto que usaria no perfil.
 
+
+## Avaliação dos Testes de Usabilidade
    
 Os resultados mostraram que a aplicação web apresentou um bom desempenho, com alta taxa de sucesso na conclusão dos cenários propostos. Todos os objetivos foram alcançados de forma eficiente, indicando que a interface é funcional e atende às necessidades dos usuários.
 
