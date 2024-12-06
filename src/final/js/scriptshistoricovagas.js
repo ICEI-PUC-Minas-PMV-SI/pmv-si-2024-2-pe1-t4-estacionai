@@ -3,6 +3,10 @@ const API_URL = "https://estacionai-bd.onrender.com/historico_reservas";
 // Pega a lista toda https://estacionai-bd.onrender.com/historico_reservas
 // Pega um item https://estacionai-bd.onrender.com/historico_reservas/:id
 
+function goBack() {
+    window.location.href = "meus-dados.html";
+  }
+
 // Função para enviar os dados para o servidor
 async function submitSearch() {
     const local = document.getElementById("local").value;
