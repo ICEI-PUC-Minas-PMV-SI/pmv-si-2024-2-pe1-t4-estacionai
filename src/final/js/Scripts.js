@@ -1,3 +1,31 @@
+const idUser = localStorage.getItem("userId");
+const cargo = localStorage.getItem("cargo");
+
+const meusDadosItem = document.getElementById("meusDadosItem");
+const minhasVagas = document.getElementById("minhasVagas");
+const cadastraLoginLi = document.getElementById("cadastra-login-li");
+const profile = document.getElementById("profile");
+
+if (!idUser) {
+    window.location.href = "./login.html";
+} else {
+    meusDadosItem.style.display = "block";
+    cadastraLoginLi.style.display = "none";
+    profile.style.display = "block";
+}
+
+if (cargo !== 'admin') {
+    localStorage.clear();
+    window.location.href = "./login.html";
+} else {
+    minhasVagas.style.display = "block";
+}
+
+
+
+
+
+
 // Array para armazenar as vagas
 let vagas = [
     {
@@ -51,7 +79,7 @@ async function renderVagas() {
         const response = await fetch('https://estacionai-bd.onrender.com/estacionamentos');
         const estacionamentos = await response.json();
 
-        const userEstacionamentos = estacionamentos.filter(est => est.proprietario_id === userId);
+        const userEstacionamentos = estacionamentos.filter(est => est.idAdmin === userId);
 
         if (userEstacionamentos.length === 0) {
             const noVagasMessage = document.createElement('div');
@@ -70,9 +98,12 @@ async function renderVagas() {
                         <h5>Vaga ${index + 1} - ${estacionamento.nome}</h5>
                         <p><strong>Endereço:</strong> ${estacionamento.endereco}</p>
                         <p><strong>Preço:</strong> ${formatCurrency(estacionamento.valor)}${typePaymentPeriod(estacionamento.valor_tipo)}</p>
-                        <span class="badge text-bg-${vaga.status === 'ocupada' ? 'danger' : 'success'}"><strong>Status:</strong> ${vaga.status === 'ocupada' ? 'Ocupada' : 'Livre'}</span>
+                        <span class="badge text-bg-${!vaga.status ? 'danger' : 'success'}"><strong>Status:</strong> ${!vaga.status ? 'Ocupada' : 'Livre'}</span>
                     </div>
                     <div>
+                        <button class="btn btn-${!vaga.status ? 'success' : 'warning'}" onclick="toggleStatus('${estacionamento.id}', '${index}', '${vaga.status}')">
+                            ${!vaga.status ? 'Liberar' : 'Ocupar'}
+                        </button>
                         <button class="btn btn-primary" onclick="confirmDelete('${estacionamento.id}', '${index}')">Excluir</button>
                     </div>
                 `;
@@ -179,17 +210,35 @@ function toggleEditHourInputs() {
     editSpecificHours.style.display = document.getElementById('editVagaHoursType').value === 'specific' ? 'block' : 'none';
 }
 
-function toggleStatus(vagaId) {
-    const vaga = vagas.find(v => v.id === vagaId);
-    vaga.status = vaga.status === "Ativa" ? "Inativa" : "Ativa";
-    renderVagas(); // Atualiza a lista
-}
+async function toggleStatus(estacionamentoId, vagaIndex) {
+    try {
+        const response = await fetch(`https://estacionai-bd.onrender.com/estacionamentos/${estacionamentoId}`);
+        const estacionamento = await response.json();
 
+        estacionamento.vagas[vagaIndex].status = estacionamento.vagas[vagaIndex].status ? 0 : 1;
+
+        const updateResponse = await fetch(`https://estacionai-bd.onrender.com/estacionamentos/${estacionamentoId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(estacionamento)
+        });
+
+        if (updateResponse.ok) {
+            renderVagas();
+        } else {
+            throw new Error('Erro ao atualizar status da vaga');
+        }
+    } catch (error) {
+        alert('Erro ao atualizar status da vaga: ' + error.message);
+    }
+}
 function confirmDelete(estacionamentoId, vagaIndex) {
     const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
     confirmDeleteModal.show();
 
-    document.getElementById('confirmDeleteButton').onclick = function() {
+    document.getElementById('confirmDeleteButton').onclick = function () {
         deleteVaga(estacionamentoId, vagaIndex);
         confirmDeleteModal.hide();
     };

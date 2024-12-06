@@ -1,4 +1,8 @@
+const idUser = localStorage.getItem("userId");
 
+if (!idUser) {
+  window.location.href = "./login.html";
+}
 
 const URL = 'https://estacionai-bd.onrender.com/usuarios'
 

@@ -1,3 +1,27 @@
+const idUser = localStorage.getItem("userId");
+const cargo = localStorage.getItem("cargo");
+
+const meusDadosItem = document.getElementById("meusDadosItem");
+const minhasVagas = document.getElementById("minhasVagas");
+const cadastraLoginLi = document.getElementById("cadastra-login-li");
+const profile = document.getElementById("profile");
+
+if (!idUser) {
+    window.location.href = "./login.html";
+} else {
+    meusDadosItem.style.display = "block";
+    cadastraLoginLi.style.display = "none";
+    profile.style.display = "block";
+}
+
+if (cargo !== 'admin') {
+    localStorage.clear();
+    window.location.href = "./login.html";
+} else {
+    minhasVagas.style.display = "block";
+}
+
+
 // Array para armazenar os estacionamentos
 let estacionamentos = [
     {
@@ -68,7 +92,6 @@ async function renderEstacionamentos() {
         }
 
         estacionamentos.forEach(estacionamento => {
-            console.log(estacionamento.id.toString())
 
             const valor = formatCurrency(estacionamento.valor) + typePaymentPeriod(estacionamento.valor_tipo);
             const newEstacionamentoItem = document.createElement('div');
@@ -156,12 +179,12 @@ async function addEstacionamento() {
         vagas: Array(parseInt(document.getElementById('estacionamentoVagas').value)).fill(null).map((_, index) => ({
             id: index,
             nome: `vaga-${index}`,
-            status: 'vago'
+            status: 0
         })),
         hoursType: document.getElementById('estacionamentoHoursType').value,
         openTime: document.getElementById('estacionamentoOpenTime').value,
         closeTime: document.getElementById('estacionamentoCloseTime').value,
-        proprietario_id: localStorage.getItem('userId')
+        idAdmin: localStorage.getItem('userId')
     };
 
     try {

@@ -59,7 +59,7 @@ body {background-image: url(fundo-linhas.png)
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  max-width: 1355px;
+  max-width: 2500px;
   margin: auto;
   background: #0055A5;
   padding: 20px;

@@ -1,3 +1,27 @@
+const idUser = localStorage.getItem("userId");
+const cargo = localStorage.getItem("cargo");
+
+const meusDadosItem = document.getElementById("meusDadosItem");
+const minhasVagas = document.getElementById("minhasVagas");
+const cadastraLoginLi = document.getElementById("cadastra-login-li");
+const profile = document.getElementById("profile");
+
+if (!idUser) {
+    window.location.href = "./login.html";
+} else {
+    meusDadosItem.style.display = "block";
+    cadastraLoginLi.style.display = "none";
+    profile.style.display = "block";
+}
+
+if (cargo !== 'admin') {
+    localStorage.clear();
+    window.location.href = "./login.html";
+} else {
+    minhasVagas.style.display = "block";
+}
+
+
 let reservations = [];
 let users = [];
 let vagas = [];
@@ -12,7 +36,6 @@ async function fetchUsers() {
         }
         const data = await response.json();
         users = data;
-        console.log('Usuários carregados:', users);
     } catch (error) {
         console.error('Erro ao carregar os usuários:', error);
     }
@@ -21,13 +44,22 @@ async function fetchUsers() {
 // Função para carregar as vagas do servidor
 async function fetchVagas() {
     try {
-        const response = await fetch('https://estacionai-bd.onrender.com/vagas');
+        const idAdmin = localStorage.getItem("userId");
+        const response = await fetch(`https://estacionai-bd.onrender.com/estacionamentos?idAdmin=${idAdmin}`);
         if (!response.ok) {
             throw new Error(`Erro ao carregar as vagas: ${response.status}`);
         }
         const data = await response.json();
-        vagas = data;
-        console.log('Vagas carregadas:', vagas);
+
+        data.forEach(el => {
+            const vagasFilter = el.vagas
+                .filter(vg => vg.status === 0)
+                .map(vg => ({
+                    ...vg,
+                    idEstacionamento: el.id,
+                }));
+            vagas.push(...vagasFilter);
+        });
     } catch (error) {
         console.error('Erro ao carregar as vagas:', error);
     }
@@ -36,13 +68,13 @@ async function fetchVagas() {
 // Função para carregar os estacionamentos do servidor
 async function fetchEstacionamentos() {
     try {
-        const response = await fetch('https://estacionai-bd.onrender.com/estacionamentos');
+        const idAdmin = localStorage.getItem("userId");
+        const response = await fetch(`https://estacionai-bd.onrender.com/estacionamentos?idAdmin=${idAdmin}`);
         if (!response.ok) {
             throw new Error(`Erro ao carregar os estacionamentos: ${response.status}`);
         }
         const data = await response.json();
         estacionamentos = data;
-        console.log('Estacionamentos carregados:', estacionamentos);
     } catch (error) {
         console.error('Erro ao carregar os estacionamentos:', error);
     }
@@ -57,10 +89,9 @@ async function fetchReservations() {
         }
         const data = await response.json();
         reservations = data;
-        console.log('Reservas carregadas:', reservations);
         await fetchUsers(); // Carrega os usuários antes de renderizar as reservas
-        await fetchVagas(); // Carrega as vagas
         await fetchEstacionamentos(); // Carrega os estacionamentos
+        await fetchVagas(); // Carrega as vagas
         renderReservations();
     } catch (error) {
         console.error('Erro ao carregar as reservas:', error);
@@ -91,7 +122,6 @@ function renderReservations() {
         const horarioReserva = reservation.horario ? reservation.horario : formatCurrentTimeBrasilia();
 
         // Log para depuração
-        console.log('Processando reserva:', reservation);
 
         const listItem = document.createElement('div');
         listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -157,12 +187,12 @@ function populateVagaSelect(reservationId) {
     if (!reservation) return;
 
     // Filtrar vagas não ocupadas e do estacionamento correspondente
-    const vagasDisponiveis = vagas.filter(v => v.ocupado == 0 && v.idEstacionamento === reservation.idEstacionamento);
+    const vagasDisponiveis = vagas.filter(v => v.status == 0 && v.idEstacionamento === reservation.idEstacionamento);
 
     vagasDisponiveis.forEach(vaga => {
         const option = document.createElement('option');
         option.value = vaga.id;
-        option.textContent = vaga.titulo;
+        option.textContent = vaga.nome;
         vagaSelect.appendChild(option);
     });
 }
@@ -171,6 +201,7 @@ function populateVagaSelect(reservationId) {
 document.getElementById('vagaForm').addEventListener('submit', async function (event) {
     event.preventDefault();
     const vagaSelect = document.getElementById('vagaSelect');
+
     if (vagaSelect.checkValidity()) {
         const reservationId = document.getElementById('reservationId').value;
         const reservation = reservations.find(r => r.id === reservationId);
@@ -180,27 +211,44 @@ document.getElementById('vagaForm').addEventListener('submit', async function (e
             return;
         }
 
-        // Atualiza o status da vaga para ocupado
-        const vagaId = vagaSelect.value;
-        const vaga = vagas.find(v => v.id === vagaId);
-        if (vaga) {
-            vaga.ocupado = 1;
-            try {
-                // Atualiza a vaga no servidor
-                await fetch(`https://estacionai-bd.onrender.com/vagas/${vagaId}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(vaga),
-                });
-            } catch (error) {
-                console.error('Erro ao atualizar a vaga:', error);
-            }
-        }
-
         // Encontra o estacionamento associado à reserva
         const estacionamento = estacionamentos.find(e => e.id === reservation.idEstacionamento);
+
+        if (!estacionamento) {
+            alert('Estacionamento não encontrado.');
+            return;
+        }
+
+        // Atualiza o status da vaga dentro do estacionamento
+        const vagaId = vagaSelect.value;
+        const vagasAtualizadas = estacionamento.vagas.map(vaga =>
+            vaga.id === vagaId ? { ...vaga, status: 1 } : vaga
+        );
+
+        const estacionamentoAtualizado = {
+            ...estacionamento,
+            vagas: vagasAtualizadas,
+        };
+
+        try {
+            // Atualiza o estacionamento com as vagas modificadas
+            const updateResponse = await fetch(`https://estacionai-bd.onrender.com/estacionamentos/${estacionamento.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(estacionamentoAtualizado),
+            });
+
+            if (!updateResponse.ok) {
+                throw new Error('Erro ao atualizar o estacionamento');
+            }
+
+            console.log('Vaga atualizada com sucesso!');
+        } catch (error) {
+            console.error('Erro ao atualizar a vaga:', error);
+            return;
+        }
 
         // Encontra o usuário associado à reserva
         const user = users.find(u => u.id === reservation.idUsuario);
@@ -210,18 +258,18 @@ document.getElementById('vagaForm').addEventListener('submit', async function (e
             idReserva: reservation.id,
             idUsuario: reservation.idUsuario,
             data: reservation.data || formatCurrentDateBrasilia(),
-            local: estacionamento ? estacionamento.nome : 'Local não especificado',
+            local: estacionamento.nome,
             veiculo: reservation.veiculo || 'Veículo não especificado',
             placa: reservation.placa || 'Placa não especificada',
             horario: reservation.horario || `${formatCurrentTimeBrasilia()} - ${formatCurrentTimeBrasilia()}`,
             valor: reservation.valor || 0,
-            vaga: vaga ? vaga.titulo : 'Vaga não especificada',
+            vaga: vagaId,
             locador: user ? user.nome : 'Locador não especificado',
-            status: 'aprovado'
+            status: 'aprovado',
         };
 
         try {
-            // Primeiro, adiciona ao histórico
+            // Adiciona ao histórico de reservas
             const addResponse = await fetch('https://estacionai-bd.onrender.com/historico_reservas', {
                 method: 'POST',
                 headers: {
@@ -235,7 +283,7 @@ document.getElementById('vagaForm').addEventListener('submit', async function (e
                 throw new Error(`Erro ${addResponse.status}: ${errorMessage || addResponse.statusText}`);
             }
 
-            // Em seguida, remove das reservas
+            // Remove das reservas
             const deleteResponse = await fetch(`https://estacionai-bd.onrender.com/reservas/${reservationId}`, {
                 method: 'DELETE',
             });
@@ -247,7 +295,7 @@ document.getElementById('vagaForm').addEventListener('submit', async function (e
 
             // Fecha o modal de confirmação
             const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
-            confirmModal.hide();
+            if (confirmModal) confirmModal.hide();
 
             // Exibe o modal de reserva confirmada
             showConfirmationModal(updatedReservation);
@@ -258,12 +306,10 @@ document.getElementById('vagaForm').addEventListener('submit', async function (e
             // Limpa o formulário
             vagaSelect.value = '';
             vagaSelect.classList.remove('is-invalid');
-
         } catch (error) {
             console.error('Erro ao aprovar a reserva:', error);
             alert(`Erro ao aprovar a reserva: ${error.message}`);
         }
-
     } else {
         vagaSelect.classList.add('is-invalid');
     }
@@ -339,6 +385,7 @@ async function rejectReservation(reservationId) {
 
 // Função para mostrar o modal de confirmação
 function showConfirmationModal(reservation) {
+    console.log(reservation)
     const totalHours = calculateHours(reservation.horario);
     const totalAmount = reservation.valor ? parseFloat(reservation.valor).toFixed(2) : '0.00';
     const valorHora = totalHours > 0 ? (reservation.valor / totalHours).toFixed(2) : '0.00';
@@ -377,20 +424,4 @@ function calculateHours(horario) {
     const start = startHour + (startMinute / 60);
     const end = endHour + (endMinute / 60);
     return (end - start).toFixed(2);
-}
-
-
-
-const idUser = localStorage.getItem("userId");
-const meusDadosItem = document.getElementById("meusDadosItem");
-
-const cargo = localStorage.getItem("cargo");
-const minhasVagas = document.getElementById("minhasVagas");
-
-if (cargo === 'admin') {
-    minhasVagas.style.display = "block";
-}
-
-if (idUser) {
-    meusDadosItem.style.display = "block";
 }

@@ -46,7 +46,7 @@ document.addEventListener("click", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const idUser = localStorage.getItem("userId");
-    
+
     const cargo = localStorage.getItem("cargo");
     const minhasVagas = document.getElementById("minhasVagas");
 
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         profile.style.display = "block";
     }
 
-    if(cargo === 'admin') {
+    if (cargo === 'admin') {
         minhasVagas.style.display = "block";
     }
 
