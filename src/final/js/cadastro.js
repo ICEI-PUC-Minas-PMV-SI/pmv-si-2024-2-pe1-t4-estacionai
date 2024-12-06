@@ -1,9 +1,3 @@
-const idUser = localStorage.getItem("userId");
-
-if (!idUser) {
-  window.location.href = "./login.html";
-}
-
 const URL = 'https://estacionai-bd.onrender.com/usuarios'
 
 function isEmailValid(email) {
@@ -75,6 +69,7 @@ async function submitlogin() {
         let to;
         if (cargo == "admin") {
           to = "./cadastro-vagas.html";
+          localStorage.setItem("userId", user.id);
         } else {
           to = "./login.html";
         }

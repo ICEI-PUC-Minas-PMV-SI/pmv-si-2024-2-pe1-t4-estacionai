@@ -69,6 +69,24 @@ async function updateUserData() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const idUser = localStorage.getItem("userId");
+    const cargo = localStorage.getItem("cargo");
+    const meusDadosItem = document.getElementById("meusDadosItem");
+    const minhasVagas = document.getElementById("minhasVagas");
+    const cadastraLoginLi = document.getElementById("cadastra-login-li");
+    const profile = document.getElementById("profile");
+
+    if (idUser) {
+        meusDadosItem.style.display = "block";
+        cadastraLoginLi.style.display = "none";
+        profile.style.display = "block";
+    }
+
+    if(cargo === 'admin') {
+        minhasVagas.style.display = "block";
+    }
+
+
     loadUserData();
 
     document.querySelector(".btn-edit-save:nth-child(1)").addEventListener("click", function () {
