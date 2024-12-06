@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,38 +12,42 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Seu CSS Personalizado -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles-mv.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item" id="meusDadosItem" style="display: none;">
+                        <a class="nav-link" href="meus-dados.html">Meus Dados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary fw-bold" href="Minhas Vagas.html">Minhas Vagas</a>
+                        <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meus_dados.html">Meus Dados</a>
+                        <a class="nav-link" href="contatenos.html">Fale Conosco</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre_nos.html">Sobre Nós</a>
+                    <li class="nav-item ms-3" id="cadastra-login-li" style="display: block;">
+                        <div class="ml-auto">
+                            <a class="btn btn-outline-secondary" role="button" href="cadastro-incial.html">Criar
+                                conta</a>
+                            <a class="btn btn-warning" href="login.html" role="button">Entrar</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fale_conosco.html">Fale Conosco</a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item ms-3" id="profile" style="display: none;">
+                        <a href="meus-dados.html" class="nav-link">
                             <i class="bi bi-person-circle" style="font-size: 1.5rem; color: #0055A5;"></i>
                         </a>
                     </li>
@@ -56,6 +61,11 @@
         <h2 class="text-center mb-4 text-primary">Lista de Estacionamentos</h2>
         <div class="list-group" id="estacionamentoList">
             <!-- Os estacionamentos serão inseridos aqui dinamicamente -->
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -65,7 +75,8 @@
     </div>
 
     <!-- Modal Adicionar Estacionamento -->
-    <div class="modal fade" id="addEstacionamentoModal" tabindex="-1" aria-labelledby="addEstacionamentoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addEstacionamentoModal" tabindex="-1" aria-labelledby="addEstacionamentoModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -84,30 +95,20 @@
                         </div>
                         <div class="mb-3">
                             <label>Preço</label>
-                            <div>
-                                <input type="checkbox" id="priceHourly"> <label for="priceHourly">R$/Hora</label>
-                                <input type="text" class="form-control mt-1" id="estacionamentoPriceHourly" placeholder="R$">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="priceDaily"> <label for="priceDaily">R$/Dia</label>
-                                <input type="text" class="form-control mt-1" id="estacionamentoPriceDaily" placeholder="R$">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="priceMonthly"> <label for="priceMonthly">R$/Mês</label>
-                                <input type="text" class="form-control mt-1" id="estacionamentoPriceMonthly" placeholder="R$">
-                            </div>
+                            <input type="number" class="form-control" id="valor" required>
                         </div>
                         <div class="mb-3">
-                            <label for="estacionamentoSize" class="form-label">Tamanho das Vagas</label>
-                            <select class="form-select" id="estacionamentoSize" required>
-                                <option value="15">15 m²</option>
-                                <option value="20">20 m²</option>
-                                <option value="25">25 m²</option>
+                            <label for="editEstacionamentoValorTipo" class="form-label">Tipo do Cobrança</label>
+                            <select class="form-select" id="editEstacionamentoValorTipo" required>
+                                <option value="hora">Hora</option>
+                                <option value="diaria">Diária</option>
+                                <option value="mensal">Mensal</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="estacionamentoHoursType" class="form-label">Horário de Funcionamento</label>
-                            <select class="form-select" id="estacionamentoHoursType" onchange="toggleHourInputs()" required>
+                            <select class="form-select" id="estacionamentoHoursType" onchange="toggleHourInputs()"
+                                required>
                                 <option value="24">24 Horas</option>
                                 <option value="specific">Específico</option>
                             </select>
@@ -122,10 +123,10 @@
                             <label for="estacionamentoVagas" class="form-label">Número de Vagas</label>
                             <input type="number" class="form-control" id="estacionamentoVagas" required>
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label>Imagem do Estacionamento</label>
                             <input type="file" class="form-control" id="estacionamentoImage" accept="image/*">
-                        </div>
+                        </div> -->
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -137,7 +138,8 @@
     </div>
 
     <!-- Modal Editar Estacionamento -->
-    <div class="modal fade" id="editEstacionamentoModal" tabindex="-1" aria-labelledby="editEstacionamentoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editEstacionamentoModal" tabindex="-1" aria-labelledby="editEstacionamentoModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -156,30 +158,20 @@
                         </div>
                         <div class="mb-3">
                             <label>Preço</label>
-                            <div>
-                                <input type="checkbox" id="editPriceHourly"> <label for="editPriceHourly">R$/Hora</label>
-                                <input type="text" class="form-control mt-1" id="editPriceHourlyInput" placeholder="R$">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="editPriceDaily"> <label for="editPriceDaily">R$/Dia</label>
-                                <input type="text" class="form-control mt-1" id="editPriceDailyInput" placeholder="R$">
-                            </div>
-                            <div>
-                                <input type="checkbox" id="editPriceMonthly"> <label for="editPriceMonthly">R$/Mês</label>
-                                <input type="text" class="form-control mt-1" id="editPriceMonthlyInput" placeholder="R$">
-                            </div>
+                            <input type="number" class="form-control" id="valor" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editEstacionamentoSize" class="form-label">Tamanho das Vagas</label>
-                            <select class="form-select" id="editEstacionamentoSize" required>
-                                <option value="15">15 m²</option>
-                                <option value="20">20 m²</option>
-                                <option value="25">25 m²</option>
+                            <label for="editEstacionamentoValorTipo" class="form-label">Tipo do Cobrança</label>
+                            <select class="form-select" id="editEstacionamentoValorTipo" required>
+                                <option value="hora">Hora</option>
+                                <option value="diaria">Diária</option>
+                                <option value="mensal">Mensal</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="editEstacionamentoHoursType" class="form-label">Horário de Funcionamento</label>
-                            <select class="form-select" id="editEstacionamentoHoursType" onchange="toggleEditHourInputs()" required>
+                            <select class="form-select" id="editEstacionamentoHoursType"
+                                onchange="toggleEditHourInputs()" required>
                                 <option value="24">24 Horas</option>
                                 <option value="specific">Específico</option>
                             </select>
@@ -194,23 +186,25 @@
                             <label for="editEstacionamentoVagas" class="form-label">Número de Vagas</label>
                             <input type="number" class="form-control" id="editEstacionamentoVagas" required>
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label>Imagem do Estacionamento</label>
                             <img src="images/ImagemEstacionamento.png" alt="Imagem do Estacionamento" class="img-fluid mb-2">
                             <input type="file" class="form-control" id="editEstacionamentoImage" accept="image/*">
-                        </div>
+                        </div> -->
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="updateEstacionamento()">Salvar Alterações</button>
+                    <button type="button" class="btn btn-primary" onclick="updateEstacionamento()">Salvar
+                        Alterações</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal Confirmar Exclusão -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -241,10 +235,12 @@
             </li>
         </ul>
     </footer>
-    
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts2.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/scripts2.js"></script>
 </body>
+
 </html>

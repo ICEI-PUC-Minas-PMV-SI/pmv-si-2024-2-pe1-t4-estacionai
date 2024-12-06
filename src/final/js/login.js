@@ -34,7 +34,7 @@ function buscar() {
         localStorage.setItem('userId', userId);
         localStorage.setItem('cargo', cargo);
 
-        window.location.href = "./home.html";
+        window.location.href = "./index.html";
 
       } else {
         alert("Usuário ou senha incorretos!");
