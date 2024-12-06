@@ -153,6 +153,11 @@ const startUpdatingEstacionamentos = async () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const idUser = localStorage.getItem("userId");
+
+    if (!idUser) {
+        window.location.href = "./login.html";
+    }
+
     const meusDadosItem = document.getElementById("meusDadosItem");
 
     const cargo = localStorage.getItem("cargo");

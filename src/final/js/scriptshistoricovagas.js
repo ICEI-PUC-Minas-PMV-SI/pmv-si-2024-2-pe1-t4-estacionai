@@ -1,3 +1,10 @@
+const idUser = localStorage.getItem("userId");
+
+if (!idUser) {
+    window.location.href = "./login.html";
+}
+
+
 const API_URL = "https://estacionai-bd.onrender.com/historico_reservas";
 
 // Pega a lista toda https://estacionai-bd.onrender.com/historico_reservas

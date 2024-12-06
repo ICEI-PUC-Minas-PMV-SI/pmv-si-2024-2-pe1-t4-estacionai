@@ -28,7 +28,7 @@ document.getElementById("saveButton").addEventListener("click", function (event)
 
     // Cria um objeto com os dados capturados
     const dadosUsuario = {
-        nomeUsuario: nomeUsuario,
+        nome: nomeUsuario,
         email: email,
         cpfCnpj: cpfCnpj,
         senha: senha,
@@ -72,23 +72,29 @@ document.getElementById("saveButton").addEventListener("click", function (event)
 // Habilita e desabilita os campos de entrada no modo de edição
 document.addEventListener("DOMContentLoaded", function () {
 
-    const idUser = localStorage.getItem("userId");
+    const idUsuario = localStorage.getItem("userId");
+    const cargo = localStorage.getItem("cargo");
+    
     const meusDadosItem = document.getElementById("meusDadosItem");
+    const minhasVagas = document.getElementById("minhasVagas");
     const cadastraLoginLi = document.getElementById("cadastra-login-li");
     const profile = document.getElementById("profile");
-
-    const cargo = localStorage.getItem("cargo");
-    const minhasVagas = document.getElementById("minhasVagas");
-
-    if (cargo === 'admin') {
-        minhasVagas.style.display = "block";
-    }
-
-    if (idUser) {
+    
+    if (!idUsuario) {
+        window.location.href = "./login.html";
+    } else {
         meusDadosItem.style.display = "block";
         cadastraLoginLi.style.display = "none";
         profile.style.display = "block";
     }
+    
+    if (cargo !== 'admin') {
+        localStorage.clear();
+        window.location.href = "./login.html";
+    } else {
+        minhasVagas.style.display = "block";
+    }
+    
 
     const editButton = document.querySelector(".btn-edit-save:nth-child(1)");
     const saveButton = document.querySelector(".btn-edit-save:nth-child(2)");
@@ -103,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     }).then(async (data) => {
         const user = await data.json();
-        const nomeUsuario = user.user;
+        const nomeUsuario = user.nome;
         const inputNomeUsuario = document.getElementById("nome-usuario")
         inputNomeUsuario.value = nomeUsuario
 
