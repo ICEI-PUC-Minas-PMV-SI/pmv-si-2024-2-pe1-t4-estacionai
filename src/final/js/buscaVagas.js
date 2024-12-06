@@ -58,10 +58,16 @@ const handleSearch = (estacionamentos) => {
 
 const saveReserva = async (estacionamentoId, tempoDesejado) => {
     try {
+        const rs = await fetch(`https://estacionai-bd.onrender.com/usuarios/${localStorage.getItem('userId')}`);
+        const user = await rs.json();
+
         const reserva = {
             idEstacionamento: estacionamentoId,
             tempo: tempoDesejado,
-            status: "pendente"
+            status: "pendente",
+            veiculo: user.veiculo.modelo || null,
+            placa: user.veiculo.placa || null,
+            cor: user.veiculo.cor || null,
         };
 
         const response = await fetch("https://estacionai-bd.onrender.com/reservas", {
