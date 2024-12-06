@@ -64,32 +64,37 @@
     <div class="container">
         <div class="profile-box">
             <div class="profile-picture">
-                <img src="usuario.png" alt="Foto de perfil">
-                <p>Usuário</p>
-                <!-- Campo de upload de foto -->
+                <img id="userImage" src="./images/sem-foto.png" alt="Foto de perfil">
+                <p id="userName">Usuário</p>
                 <input type="file" id="uploadFoto" accept="image/*">
                 <label for="uploadFoto" class="upload-label">Escolher Foto</label>
             </div>
+
+
             <div class="profile-info">
                 <h2>Meus Dados</h2>
                 <button class="btn-historico">Histórico de Vagas</button>
-                <p>Nome de Usuário <input type="text" placeholder="Nome de Usuário" required id="nome-usuario"></p>
-                <p>Nome <input type="text" placeholder="Nome" required></p>
-                <p>Sobrenome <input type="text" placeholder="Sobrenome" required></p>
-                <p>Modelo Veículo <input type="text" placeholder="Modelo Veículo" required></p>
-                <p>Placa do Carro <input type="text" placeholder="Placa do Carro" required></p>
-                <p>Cor <input type="text" placeholder="Cor" required></p>
-                <p>CPF/CNPJ <input type="text" placeholder="CPF/CNPJ" required></p>
-                <p>Email <input type="text" placeholder="Email" required></p>
-                <p>Senha <input type="text" placeholder="Senha" required></p>
-                <p>Logradouro com Nº <input type="text" placeholder="Logradouro com Nº" required></p>
-                <p>Telefone <input type="text" placeholder="Telefone" required></p>
+                <p>Nome de Usuário <input type="text" id="nomeUsuario" placeholder="Nome de Usuário" required></p>
+                <p>Nome <input type="text" id="nome" placeholder="Nome" required></p>
+                <p>Sobrenome <input type="text" id="sobrenome" placeholder="Sobrenome" required></p>
+                <p>Modelo Veículo <input type="text" id="modeloVeiculo" placeholder="Modelo Veículo" required></p>
+                <p>Placa do Carro <input type="text" id="placaCarro" placeholder="Placa do Carro" required></p>
+                <p>Cor <input type="text" id="corVeiculo" placeholder="Cor" required></p>
+                <p>CPF/CNPJ <input type="text" id="cpfCnpj" placeholder="CPF/CNPJ" required></p>
+                <p>Email <input type="text" id="email" placeholder="Email" required></p>
+                <p>Senha <input type="password" id="senha" placeholder="Senha" required></p>
+                <p>Logradouro com Nº <input type="text" id="logradouro" placeholder="Logradouro com Nº" required></p>
+                <p>Telefone <input type="text" id="telefone" placeholder="Telefone" required></p>
 
                 <!-- Botões de Editar e Salvar -->
                 <div class="button-group">
                     <button class="btn-edit-save">Editar</button>
                     <button id="saveButton" class="btn-edit-save">Salvar</button>
-                    <button style="background: none; border: none; color: inherit; text-decoration: underline; cursor: pointer; padding: 0;" onclick="logout()">Sair</button>
+                    <button
+                        style="background: none; border: none; color: inherit; text-decoration: underline; cursor: pointer; padding: 0;"
+                        onclick="logout()">
+                        Sair
+                    </button>
                 </div>
             </div>
         </div>
