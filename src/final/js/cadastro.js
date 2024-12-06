@@ -1,5 +1,3 @@
-
-
 const URL = 'https://estacionai-bd.onrender.com/usuarios'
 
 function isEmailValid(email) {
@@ -71,6 +69,7 @@ async function submitlogin() {
         let to;
         if (cargo == "admin") {
           to = "./cadastro-vagas.html";
+          localStorage.setItem("userId", user.id);
         } else {
           to = "./login.html";
         }

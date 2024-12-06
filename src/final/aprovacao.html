@@ -13,7 +13,7 @@
     <!-- Fonte do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Link para CSS personalizado -->
-    <link rel="stylesheet" href="css/style-home.css">
+    <link rel="stylesheet" href="./css/style-home.css">
     <style>
         /* Estilos para estruturar o layout flexível */
         html,
@@ -52,7 +52,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="/images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+                <img src="./images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -62,6 +62,9 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item" id="minhasVagas" style="display: none;">
+                        <a class="nav-link" href="minhas-vagas.html">Minhas Vagas</a>
                     </li>
                     <li class="nav-item" id="meusDadosItem" style="display: none;">
                         <a class="nav-link" href="meus-dados.html">Meus Dados</a>
@@ -172,7 +175,7 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Incluindo o arquivo JavaScript externo -->
-    <script src="js/aprovacao.js"></script>
+    <script src="./js/aprovacao.js"></script>
 </body>
 
 </html>

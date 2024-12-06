@@ -1,88 +1,83 @@
 const API_URL = "https://estacionai-bd.onrender.com/usuarios";
 
-// Redireciona para a página históricovagas
-document.querySelector(".btn-historico").addEventListener("click", function () {
-    window.location.href = "./historico-vagas.html";
-});
+async function loadUserData() {
+    const userId = localStorage.getItem("userId");
+    try {
+        const response = await fetch(`${API_URL}/${userId}`);
+        const userData = await response.json();
 
+        document.getElementById("nomeUsuario").value = userData.nome || '';
+        document.getElementById("nome").value = userData.nome || '';
+        document.getElementById("sobrenome").value = userData.sobrenome || '';
+        document.getElementById("modeloVeiculo").value = userData.veiculo?.modelo || '';
+        document.getElementById("placaCarro").value = userData.veiculo?.placa || '';
+        document.getElementById("corVeiculo").value = userData.veiculo?.cor || '';
+        document.getElementById("cpfCnpj").value = userData.cpfCnpj || '';
+        document.getElementById("email").value = userData.email || '';
+        document.getElementById("senha").value = userData.senha || '';
+        document.getElementById("logradouro").value = userData.endereco?.logradouro || '';
+        document.getElementById("telefone").value = userData.telefone || '';
 
-// Função para capturar e enviar dados do formulário para o servidor
-document.getElementById("saveButton").addEventListener("click", function (event) {
-    // Evita o comportamento padrão do botão
-    event.preventDefault();
+        const inputs = document.querySelectorAll(".profile-info input");
+        inputs.forEach(input => input.disabled = true);
 
-    // Captura os dados do formulário
-    const nomeUsuario = document.querySelector("input[placeholder='Nome de Usuário']").value;
-    const nome = document.querySelector("input[placeholder='nome']").value;
-    const sobrenome = document.querySelector("input[placeholder='sobrenome']").value;
-    const modeloVeiculo = document.querySelector("input[placeholder='Modelo Veículo']").value;
-    const placa = document.querySelector("input[placeholder='Placa do Carro']").value;
-    const cor = document.querySelector("input[placeholder='Cor']").value;
-    const cpfCnpj = document.querySelector("input[placeholder='CPF/CNPJ']").value;
-    const email = document.querySelector("input[placeholder='Email']").value;
-    const senha = document.querySelector("input[placeholder='Senha']").value;
-    const logradouro = document.querySelector("input[placeholder='Logradouro com Nº']").value;
-    const telefone = document.querySelector("input[placeholder='Telefone']").value;
+    } catch (error) {
+        console.error("error ----", error);
+        alert("Erro ao carregar dados do usuário");
+    }
+}
 
-
-
-    // Cria um objeto com os dados capturados
-    const dadosUsuario = {
-        nomeUsuario: nomeUsuario,
-        email: email,
-        cpfCnpj: cpfCnpj,
-        senha: senha,
-        telefone: telefone,
+async function updateUserData() {
+    const userId = localStorage.getItem("userId");
+    const userData = {
+        nome: document.getElementById("nomeUsuario").value,
+        sobrenome: document.getElementById("sobrenome").value,
+        email: document.getElementById("email").value,
+        cpfCnpj: document.getElementById("cpfCnpj").value,
+        senha: document.getElementById("senha").value,
+        telefone: document.getElementById("telefone").value,
         endereco: {
-            logradouro: logradouro,
-            cep: cep
+            logradouro: document.getElementById("logradouro").value
         },
         veiculo: {
-            modelo: modeloVeiculo,
-            placa: placa,
-            cor: cor
+            modelo: document.getElementById("modeloVeiculo").value,
+            placa: document.getElementById("placaCarro").value,
+            cor: document.getElementById("corVeiculo").value
         }
     };
 
-    // Envia os dados para o servidor usando a API fetch
-    fetch(API_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dadosUsuario)
-    })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Erro ao enviar os dados para o servidor");
-            }
-        })
-        .then(data => {
-            alert("Dados enviados com sucesso!");
-            console.log("Resposta do servidor:", data);
-        })
-        .catch(error => {
-            alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
-            console.error("Erro:", error);
+    try {
+        const response = await fetch(`${API_URL}/${userId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
         });
-});
 
-// Habilita e desabilita os campos de entrada no modo de edição
+        if (response.ok) {
+            alert("Dados atualizados com sucesso!");
+            const inputs = document.querySelectorAll(".profile-info input");
+            inputs.forEach(input => input.disabled = true);
+        } else {
+            throw new Error("Erro ao atualizar dados");
+        }
+    } catch (error) {
+        console.error("error ---", error);
+        alert("Erro ao atualizar dados do usuário");
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-
     const idUser = localStorage.getItem("userId");
+    const cargo = localStorage.getItem("cargo");
     const meusDadosItem = document.getElementById("meusDadosItem");
+    const minhasVagas = document.getElementById("minhasVagas");
     const cadastraLoginLi = document.getElementById("cadastra-login-li");
     const profile = document.getElementById("profile");
 
-    const cargo = localStorage.getItem("cargo");
-    const minhasVagas = document.getElementById("minhasVagas");
-
-    if (cargo === 'admin') {
-        minhasVagas.style.display = "block";
-    }
+    const uploadFoto = document.getElementById("uploadFoto");
+    const profilePicture = document.querySelector(".profile-picture img");
 
     if (idUser) {
         meusDadosItem.style.display = "block";
@@ -90,62 +85,57 @@ document.addEventListener("DOMContentLoaded", function () {
         profile.style.display = "block";
     }
 
-    const editButton = document.querySelector(".btn-edit-save:nth-child(1)");
-    const saveButton = document.querySelector(".btn-edit-save:nth-child(2)");
-    const inputs = document.querySelectorAll(".profile-info input");
-    const uploadFoto = document.getElementById("uploadFoto");
-    const profilePicture = document.querySelector(".profile-picture img");
-
-    fetch(`${API_URL}/${idUsuario}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-    }).then(async (data) => {
-        const user = await data.json();
-        const nomeUsuario = user.user;
-        const inputNomeUsuario = document.getElementById("nome-usuario")
-        inputNomeUsuario.value = nomeUsuario
-
-    })
+    if (cargo === 'admin') {
+        minhasVagas.style.display = "block";
+    }
 
 
+    loadUserData();
 
-    // Função para habilitar campos de entrada no modo de edição
-    editButton.addEventListener("click", function () {
+    document.querySelector(".btn-edit-save:nth-child(1)").addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".profile-info input");
         inputs.forEach(input => input.disabled = false);
         alert("Você agora pode editar os campos.");
     });
 
-    // Função para salvar os dados e desabilitar a edição dos campos
-    saveButton.addEventListener("click", function () {
+    document.querySelector(".btn-edit-save:nth-child(2)").addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".profile-info input");
         let allFilled = true;
+
         inputs.forEach(input => {
             if (input.value.trim() === "") {
                 allFilled = false;
-                input.classList.add("border-danger"); // Destaca campos vazios
+                input.classList.add("border-danger");
             } else {
                 input.classList.remove("border-danger");
             }
         });
 
-        // Se todos os campos estiverem preenchidos, envie os dados e desabilite os campos
         if (allFilled) {
-            alert("Dados salvos com sucesso!");
-            inputs.forEach(input => input.disabled = true); // Desabilita novamente os campos
-            document.getElementById("saveButton").click(); // Envia os dados
+            updateUserData();
         } else {
             alert("Por favor, preencha todos os campos.");
         }
     });
 
-    // Função para atualizar a foto de perfil com o upload
+
+    const savedImage = localStorage.getItem("profilePicture");
+    const img = JSON.parse(savedImage);
+    if (img && img.usr === idUser) {
+        profilePicture.src = img.img;
+    }
+
     uploadFoto.addEventListener("change", function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                profilePicture.src = e.target.result;
+                const imageBase64 = e.target.result;
+
+                profilePicture.src = imageBase64;
+
+                const it = JSON.stringify({ img: imageBase64, usr: idUser });
+                localStorage.setItem("profilePicture", it);
             };
             reader.readAsDataURL(file);
         }
@@ -153,7 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const logout = () => {
-    localStorage.clear();
+    localStorage.removeItem("userId");
+    localStorage.removeItem("cargo");
+    window.location.href = "./login.html";
+};
 
-    window.location.href = "./login.html"
-}
+document.querySelector(".btn-historico").addEventListener("click", function () {
+    window.location.href = "./historico-vagas.html";
+});

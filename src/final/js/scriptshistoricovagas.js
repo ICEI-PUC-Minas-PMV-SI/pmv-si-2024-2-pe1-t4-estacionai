@@ -1,3 +1,10 @@
+const idUser = localStorage.getItem("userId");
+
+if (!idUser) {
+    window.location.href = "./login.html";
+}
+
+
 const API_URL = "https://estacionai-bd.onrender.com/historico_reservas";
 
 // Pega a lista toda https://estacionai-bd.onrender.com/historico_reservas
@@ -123,14 +130,13 @@ async function viewReceipt(id) {
         <p style="text-align: center; font-size: 24px; font-weight: bold;">${formatterPrice.format(item.valor)}</p>
         <div class="details">
             <p><strong>Local:</strong> ${item.local}</p>
-            <p><strong>Ref. Vaga:</strong> ${item.vaga}</p>
             <p><strong>Data de Reserva:</strong> ${formattedDate}</p>
             <p><strong>Veículo:</strong> ${item.veiculo}</p>
             <p><strong>Placa:</strong> ${item.placa}</p>
             <p><strong>Horário:</strong> ${item.horario}</p>
             <p><strong>Método de Pagamento:</strong> No Local</p>
             <p><strong>Total de horas:</strong> 1:00h</p>
-            <p><strong>Locador:</strong> ${item.locador}</p>
+            <p><strong>Locador:</strong> ${item.locador || "Não divulgado"}</p>
             <p><strong>Total:</strong> ${formatterPrice.format(item.valor)}</p>
             <p><strong>Valor hora:</strong> ${formatterPrice.format(item.valor)}</p>
         </div>

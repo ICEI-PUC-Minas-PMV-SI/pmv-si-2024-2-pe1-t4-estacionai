@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="css/CadastroVagas.css" />
+    <link rel="stylesheet" href="./css/CadastroVagas.css" />
     <title>Meus Dados</title>
 </head>
 
@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="/images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
+                <img src="./images/logo.png" alt="Logo" style="width: 98px; height: 72px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -32,7 +32,7 @@
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item" id="minhasVagas" style="display: none;">
-                        <a class="nav-link active text-primary fw-bold" href="minhas-vagas.html">Minhas Vagas</a>
+                        <a class="nav-link" href="minhas-vagas.html">Minhas Vagas</a>
                     </li>
                     <li class="nav-item" id="meusDadosItem" style="display: none;">
                         <a class="nav-link" href="meus-dados.html">Meus Dados</a>
@@ -66,16 +66,17 @@
                 <img src="images/Logo-2.png" alt="Foto de Perfil" />
             </div>
             <div class="profile-info">
-                <form>
-                    <label for="NomeRazaoSocial" class="form-label">Nome / Razão Social </label>
-                    <input type="text" placeholder="Nome / Razão Social" required>
-                    <label for="CNPJCPF" class="form-label">CNPJ/CPF </label>
-                    <input type="text" placeholder="CNPJ/CPF" required>
+                <h3 class="text-light mb-5">Cadastro de Locador</h3>
+                <form id="cadastroForm">
+                    <label for="nomeRazaoSocial" class="form-label">Nome / Razão Social </label>
+                    <input type="text" id="nomeRazaoSocial" placeholder="Nome / Razão Social" required />
+                    <label for="cnpjCpf" class="form-label">CNPJ/CPF </label>
+                    <input type="text" id="cnpjCpf" placeholder="CNPJ/CPF" required />
                     <div>
-                        <button type="button">Voltar</button>
+                        <button type="button" onclick="back()">Voltar</button>
                         <button type="submit">Registrar</button>
                     </div>
-                    <form>
+                </form>
             </div>
         </div>
     </div>
@@ -98,6 +99,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="./js/cadastraVaga.js"></script>
 </body>
 
 </html>
