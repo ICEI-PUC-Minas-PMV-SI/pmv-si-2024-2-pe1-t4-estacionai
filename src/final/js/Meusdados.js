@@ -76,13 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const cadastraLoginLi = document.getElementById("cadastra-login-li");
     const profile = document.getElementById("profile");
 
+    const uploadFoto = document.getElementById("uploadFoto");
+    const profilePicture = document.querySelector(".profile-picture img");
+
     if (idUser) {
         meusDadosItem.style.display = "block";
         cadastraLoginLi.style.display = "none";
         profile.style.display = "block";
     }
 
-    if(cargo === 'admin') {
+    if (cargo === 'admin') {
         minhasVagas.style.display = "block";
     }
 
@@ -114,10 +117,34 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Por favor, preencha todos os campos.");
         }
     });
+
+
+    const savedImage = localStorage.getItem("profilePicture");
+    const img = JSON.parse(savedImage);
+    if (img && img.usr === idUser) {
+        profilePicture.src = img.img;
+    }
+
+    uploadFoto.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageBase64 = e.target.result;
+
+                profilePicture.src = imageBase64;
+
+                const it = JSON.stringify({ img: imageBase64, usr: idUser });
+                localStorage.setItem("profilePicture", it);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 });
 
 const logout = () => {
-    localStorage.clear();
+    localStorage.removeItem("userId");
+    localStorage.removeItem("cargo");
     window.location.href = "./login.html";
 };
 
