@@ -1,5 +1,5 @@
 ![piphomed id_2](https://github.com/user-attachments/assets/21310c63-9570-4f79-bee5-a201a208afd7)
-[PIPHOMED.]
+
 
 ## Introdução
 
