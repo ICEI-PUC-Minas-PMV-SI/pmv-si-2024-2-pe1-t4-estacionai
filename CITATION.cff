@@ -1,9 +1,9 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title:
+title: Um Aplicativo de Aluguel de Vagas
 authors:
-  - family-names:
-    given-names:
+  - family-names: Mendes Da Fonseca
+    given-names: Mateus
   - family-names:
     given-names:
   - family-names:
