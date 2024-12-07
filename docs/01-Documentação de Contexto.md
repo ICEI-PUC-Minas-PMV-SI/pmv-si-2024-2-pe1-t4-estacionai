@@ -3,8 +3,7 @@
 
 ## Introdução
 
-  A crescente urbanização e o aumento do número de veículos nas cidades têm tornado cada vez mais difícil a busca por vagas de estacionamento disponíveis, especialmente em áreas centrais e comerciais. 
-Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, saltando de 64,8 milhões para 115,1 milhões em 2022. Com o crescimento  da população e também o aumento do número de veículos nas grandes cidades, há uma crescente pressão sobre as infraestruturas urbanas. 
+A crescente urbanização e o aumento do número de veículos nas cidades têm tornado cada vez mais difícil a busca por vagas de estacionamento disponíveis, especialmente em áreas centrais e comerciais. Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, passando de 64,8 milhões para 115,1 milhões em 2022. Com o crescimento da população e o aumento do número de veículos nas grandes cidades, há uma crescente pressão sobre as infraestruturas urbanas.
  
   A busca por vagas de estacionamento em grandes centros urbanos é um problema que impacta diretamente a mobilidade e a qualidade de vida. Uma pesquisa realizada pela EY Consultoria, citada pela Mobilize Brasil (2014), revelou um déficit de 125 mil vagas no centro expandido de São Paulo, gerando congestionamentos e impactando a mobilidade urbana.
 
@@ -23,7 +22,7 @@ Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, saltando de
 
 ## Problema
 
-  A falta de um sistema eficiente que permita aos motoristas localizar e reservar vagas de estacionamento de maneira antecipada e segura resulta em decisões ineficientes, frustração, perda de tempo e recursos (combustível), com motoristas frequentemente circulando por longos períodos até encontrar um local para estacionar é um desafio comum nas grandes cidades, cidades turísticas, onde a demanda por estacionamento em muitos casos excede a oferta, resultando em congestionamentos, aumento do tempo de viagem e frustração para os motoristas. Em muitos casos, espaços de estacionamento privados ou comerciais ficam ociosos por longos períodos, representando uma oportunidade de rentabilização que não é aproveitada.
+A falta de um sistema eficiente que permita aos motoristas localizar e reservar vagas de estacionamento de maneira antecipada e segura resulta em decisões ineficientes, frustração, perda de tempo e recursos (combustível). Motoristas frequentemente circulam por longos períodos até encontrar um local para estacionar, o que é um desafio comum em grandes cidades e cidades turísticas, onde a demanda por estacionamento, em muitos casos, excede a oferta, resultando em congestionamentos, aumento do tempo de viagem e frustração para os motoristas. Em muitos casos, espaços de estacionamento privados ou comerciais ficam ociosos por longos períodos, representando uma oportunidade de rentabilização que não é aproveitada.
 
   A escassez de vagas pode levar a aumentos de custos, uso inadequado de espaços públicos e até mesmo impactos ambientais, como a emissão de poluentes devido ao tempo adicional que os motoristas passam dirigindo à procura de vagas. 
 
@@ -32,7 +31,7 @@ Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, saltando de
 
 ## Justificativa
 
-  Encontrar uma vaga de estacionamento tornou-se um desafio diário para usuários de estacionamentos privados, o que acaba por vezes desapontando o consumidor e gera prejuízos para o proprietários de estacionamento, já que a chance de retorno desses clientes a esses locais tendem a diminuir após a primeira experiencia frustrada. 
+Encontrar uma vaga de estacionamento tornou-se um desafio diário para usuários de estacionamentos privados, o que, por vezes, desaponta o consumidor e gera prejuízos para os proprietários de estacionamento, já que a chance de retorno desses clientes a esses locais tende a diminuir após a primeira experiência frustrada.
 
   Desse modo, a plataforma proposta oferecerá ao usuário a possibilidade de agendar local e horário da vaga com antecedência, o que irá gerar ao cliente segurança ao sair de casa, uma vez que, não irá precisar mudar sua rota por falta de local para estacionar. Consequentemente, ao ir direto a vaga agendada o usuário estará também reduzindo a emissão de gases poluentes. Este avanço é fundamental para promover uma mobilidade mais sustentável e um ecossistema urbano mais limpo.
 
@@ -42,7 +41,7 @@ Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, saltando de
 
 ## Objetivo Geral
 
-  Desenvolver uma plataforma que permita aos proprietários de estacionamentos cadastrem as vagas disponiveis para estacionar, oferecendo aos usuários a possibilidade de visualizar e agendar as vagas de forma pratica e intuitiva.
+Desenvolver uma plataforma que permita aos proprietários de estacionamentos cadastrar as vagas disponíveis para estacionar, oferecendo aos usuários a possibilidade de visualizar e agendar as vagas de forma prática e intuitiva.
 
 ## Objetivos Específicos 
 
@@ -57,7 +56,7 @@ Segundo Nobre (2023), a frota de veículos cresceu 43,7% em 12 anos, saltando de
 ## Público-Alvo
 
 Nosso Público-alvo é composto por 2 grupos de indivíduos:
-- Pessoas físicas que possuem veículos, sem restrições de idade ou classe social, e que buscam praticidade para encontrar locais para armazená-los em segurança durante seus compromissos diversos;
+- Pessoas físicas que possuem veículos, sem restrições de idade ou classe social, e que buscam praticidade para encontrar locais para armazená-los em segurança durante seus diversos compromissos;
 - Pessoas jurídicas ou físicas que desejam disponibilizar suas propriedades para serem utilizadas como estacionamentos.
 
 ## Fontes:
