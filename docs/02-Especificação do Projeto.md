@@ -63,7 +63,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO...| QUERO/PRECISO ...  |PARA ...|
 |--------------------|------------------------------------|----------------------------------------|
-| Maximiliano Augusto | Reservar uma vaga no estacionamento da empresa nos dias em que trabalha de forma presencial | Garantir a prensença de forma pontual no trabalho|
+| Maximiliano Augusto | Reservar uma vaga no estacionamento da empresa nos dias em que trabalha de forma presencial | Garantir a presença de forma pontual no trabalho|
 | Ana Luiza | Reservar uma vaga proxima ao local de trabalho | Assegurar a pontualidade e prevenir imprevistos na locomoção até o trabalho  |
 | João Pedro | Organizar a distrubuição de vagas no estacionamento do Shopping | Garantir a Segurança dos veículos dos clientes e simplificar a locomoção até seu estabelecimento |
 | Roberto Carlos | Maximizar a ocupação de vagas no estacionamento | Garantir maior controle sobre o fluxo de veículos e sobre o tempo |
