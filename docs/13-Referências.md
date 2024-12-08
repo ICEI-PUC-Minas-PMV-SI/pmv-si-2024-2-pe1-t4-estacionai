@@ -1,21 +1,9 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+NOBRE, K. Frota de veículos cresce 43,7% em 12 anos no Brasil. A Gazeta, 30 nov. 2023. Disponível em: https://www.agazeta.com.br/colunas/karine-nobre/frota-de-veiculos-cresce-437-em-12-anos-no-brasil-1123. Acesso em: 18 de agosto de 2024.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+MOBILIZE BRASIL. Estacionamentos: vilões da mobilidade urbana. Disponível em: https://www.mobilize.org.br/noticias/6314/estacionamentos-viloes-da-mobilidade-urbana.html. Acesso em: 28 de agosto de 2024.
 
-Exemplos de referências bibliográficas:
+ESTADÃO. Mobilidade democrática e sustentável. Disponível em: https://mobilidade.estadao.com.br/meios-de-transporte/carro/mobilidade-democratica-e-sustentavel/. Acesso em: 28 de agosto de 2024.
 
-
-**[1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
-
-**[2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
-
-**[3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
-
-**[4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
-
-**[5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
-
+PIPHOMED. Imagem da introdução. Disponível em: [link]. Acesso em: 05 de setembro de 2024.
