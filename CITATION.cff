@@ -2,28 +2,29 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: Um Aplicativo de Aluguel de Vagas
 authors:
-  - family-names: Mendes Da Fonseca
+  - family-names: Sanchez Laburu
+    given-names: Gerardo David
+  - family-names: Mendes da Fonseca
     given-names: Mateus
-  - family-names: de Souza Ribeiro 
+  - family-names: Rodrigues Bon
+    given-names: Matheus
+  - family-names: Alves Oliveira Calazans
+    given-names: Pedro Augusto
+  - family-names: Salman de Oliveira
+    given-names: Pedro Paulo
+  - family-names: de Souza Ribeiro
     given-names: Raquel
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - family-names:
-    given-names:
-  - name-suffix: Professor XXXX
+  - family-names: Eppenstein
+    given-names: Rayana
+  - name-suffix: Professora
     affiliation: PUC Minas
-    family-names:
-    given-names:
+    family-names: Soares de Andrade
+    given-names: Michelle Hanne 
 keywords:
-  -
-  -
-repository-code:
+  - estacionamento
+  - usuário
+  - proprietário
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe1-t4-estacionai
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2023-06-30
+date-released: 2024-12-08
