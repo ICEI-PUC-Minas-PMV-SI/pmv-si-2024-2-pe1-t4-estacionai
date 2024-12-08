@@ -35,18 +35,11 @@ A tabela que se segue apresenta os requisitos funcionais e não-funcionais que r
 |RF-006| Permitir que o proprietário defina preços por hora, dia, ou mês para as vagas | Mateus Mendes | Minhas Vagas.html |
 |RF-007| Implementar um sistema de login | Pedro Augusto | login.html |
 |RF-008| Permitir que o usuário pesquise vagas de estacionamento por local | Matheus Bon | home.html |
-|RF-009| Exibir para o usuário as vagas de estacionamento mais próximas a ele |  Matheus Bon | home.html |
-|RF-010| Permitir que o usuário reserve uma vaga de estacionamento por hora, dia ou mês |  Matheus Bon | home.html |
-|RF-011| Exibir o preço da vaga antes de concluir a reserva |  Matheus Bon | home.html |
-|RF-012| Permitir que o usuário cancele uma reserva |  David Gerardo | --- |
-|RF-013| Notificar o usuário sobre o status de suas reservas (confirmada, cancelada, etc.) | Matheus Bon | home.html |
-|RF-014| Exibir um histórico de reservas de vagas do usuário | David Gerardo | --- |
-|RF-015| Permitir que os usuários atualizem e visualizem seus perfis | Rayana Eppennstein | MeusDados.html |
-|RF-016| Permitir que o proprietário defina um tempo limite de cancelamento | --- | --- |
-|RF-017| A aplicação deve permitir que qualquer usuári com ou sem login visualize "Sobre Nós" | Raquel Ribeiro | Sobrenos.html |
-|RF-018| Permitir que qualquer usuário com ou sem login visualize "Equipe" | Raquel Ribeiro | fundadores.html |
-|RF-019| Permitir que qualquer usuári contate a equipe através de formulário | Rayana Eppenstein | Contatenos.html |
-|RF-020| Permitir que qualquer usuário com ou sem login visualize as perguntas frequentes | Raquel Ribeiro | Contatenos.html |
+|RF-009| Permitir que o usuário reserve uma vaga de estacionamento por hora, dia ou mês |  Matheus Bon | home.html |
+|RF-010| Exibir o preço da vaga antes de concluir a reserva |  Matheus Bon | home.html |
+|RF-011| Notificar o proprietário sobre o status de suas reservas (confirmada, cancelada, etc.) | Matheus Bon | home.html |
+|RF-012| Exibir um histórico de reservas de vagas do usuário | David Gerardo | --- |
+|RF-013| Permitir que os usuários atualizem e visualizem seus perfis | Rayana Eppennstein | MeusDados.html |
 
 
 ## Descrição das estruturas:
