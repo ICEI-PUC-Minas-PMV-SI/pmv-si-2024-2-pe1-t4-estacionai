@@ -177,6 +177,8 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 | 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
 | 2             | Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga |
 | 3             | Usuário Motrista cadastrado que deseja encontrar editar seus dados cadastrais na plataforma para uso mensal da plataforma. |
+| 4             | Você é um administrador que deseja aprovar ou recusar reservas pendentes.
+ |
 
 ## Registro de Testes de Usabilidade
 
@@ -225,6 +227,18 @@ Achei fácil acessar as informações e não tive dificuldade em conclui-las.
 1. Achei fácil, mas fique confusa onde apertar na hora de salvar meus dados, pois havia uma mensagem no final com um botão de "ok" que apareceu mais de uma vez.
 2. Achei fácil, levei mais tempo procurando a foto que usaria no perfil.
 
+**Cenário 4:** Você é um administrador que deseja aprovar ou recusar reservas pendentes.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 4.8                  | 00:01:00                   |
+| 2       | SIM             | 5.0                  | 00:01:15                   |
+| **Média** | 100%          | 4.9                  | 00:01:07                   |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 00:00:50 |
+
+**Comentário do usuário:**
+1. O processo foi intuitivo e rápido.
+2. Gostei do layout da página, mas seria bom adicionar um botão de "ajuda" para casos de dúvida.
 
 ## Avaliação dos Testes de Usabilidade
    
