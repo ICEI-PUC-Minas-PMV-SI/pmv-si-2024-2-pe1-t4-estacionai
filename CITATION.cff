@@ -1,6 +1,6 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: Um Aplicativo de Aluguel de Vagas
+title: Plataforma de reserva de vagas de estacionamento.
 authors:
   - family-names: Sanchez Laburu
     given-names: Gerardo David
@@ -22,8 +22,7 @@ authors:
     given-names: Michelle Hanne 
 keywords:
   - estacionamento
-  - usuário
-  - proprietário
+  - reservar vagas
 repository-code: https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe1-t4-estacionai
 license: CC-BY-4.0
 version: 1.0.0
