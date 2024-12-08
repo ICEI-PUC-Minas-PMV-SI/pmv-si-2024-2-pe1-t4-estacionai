@@ -177,8 +177,7 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 | 1             | Você é uma pessoa que deseja buscar o histórico das reservas de vagas que realizou para o seu carro . Encontre as informações na página pelo estacionamento,modelo ou placa do veículo. |
 | 2             | Um motorista que deseja encontrar um estacionamento/vaga para estacionar seu carro. Ele deve buscar essa informações na página de lista de vagas e reservar uma vaga |
 | 3             | Usuário Motrista cadastrado que deseja encontrar editar seus dados cadastrais na plataforma para uso mensal da plataforma. |
-| 4             | Você é um administrador que deseja aprovar ou recusar reservas pendentes.
- |
+| 4             | Você é um administrador que deseja aprovar ou recusar reservas pendentes.|
 
 ## Registro de Testes de Usabilidade
 
