@@ -8,7 +8,7 @@ Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do proje
 
 ## Link site
 
-https://estacionai.onrender.com/home.html
+https://estacionai.onrender.com
 
 ## Conjunto de Slides (Estrutura)
 
