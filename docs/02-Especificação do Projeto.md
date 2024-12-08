@@ -86,14 +86,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-006| Permitir que o proprietário defina preços por hora, dia, ou mês para as vagas | MÉDIA |
 |RF-007| Implementar um sistema de login | ALTA |
 |RF-008| Permitir que o usuário pesquise vagas de estacionamento por local | ALTA |
-|RF-009| Exibir para o usuário as vagas de estacionamento mais próximas a ele | MÉDIA |
-|RF-010| Permitir que o usuário reserve uma vaga de estacionamento por hora, dia ou mês | MÉDIO |
-|RF-011| Exibir o preço da vaga antes de concluir a reserva | BAIXO |
-|RF-012| Permitir que o usuário cancele uma reserva | BAIXO |
-|RF-013| Notificar o usuário sobre o status de suas reservas (confirmada, cancelada, etc.) | BAIXO |
-|RF-014| Exibir um histórico de reservas de vagas do usuário | BAIXA |
-|RF-015| Permitir que os usuários atualizem e visualizem seus perfis | BAIXA |
-|RF-016| Permitir que o proprietário defina um tempo limite de cancelamento | BAIXA |
+|RF-009| Permitir que o usuário reserve uma vaga de estacionamento por hora, dia ou mês | MÉDIO |
+|RF-010| Exibir o preço da vaga antes de concluir a reserva | BAIXO |
+|RF-011| Notificar o proprietário sobre o status de suas reservas (confirmada, cancelada, etc.) | BAIXO |
+|RF-012| Exibir um histórico de reservas de vagas do usuário | BAIXA |
+|RF-013| Permitir que os usuários atualizem e visualizem seus perfis | BAIXA |
 
 
 ### Requisitos não Funcionais
