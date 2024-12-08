@@ -12,7 +12,7 @@ https://estacionai.onrender.com/home.html
 
 ## Conjunto de Slides (Estrutura)
 
-[Apresentação  09_10.pdf](https://github.com/user-attachments/files/18052845/Apresentacao.09_10.pdf)
+[Apresentação estacionai.pdf](https://github.com/user-attachments/files/18053549/Apresentacao.estacionai.pdf)
 
 ## Vídeo de demonstração
 
